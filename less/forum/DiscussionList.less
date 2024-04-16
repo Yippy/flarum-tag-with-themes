@@ -1,0 +1,496 @@
+.DiscussionList {
+  .item-tag:before {
+    content: "\a";
+    white-space: pre;
+  }
+  .item-terminalPost {
+    position: absolute;
+    font-size: 14px;
+    right:10px;
+    bottom:34px;
+  }
+  .item-excerpt {
+    display:block !important;
+    font-size: 14px;
+    width:100%;
+  }
+  .item-excerpt:after {
+    content: "\a";
+    white-space: pre;
+  }
+  .item-tag {
+    width: 100%;
+    border-top: solid 1px;
+    line-height: 34px;
+  }
+  .DiscussionListItem-stats, .DiscussionListItem-count {
+    color: white !important;
+    text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+  }
+  &-discussions > li {
+    .asirem-border-radius(~'.Avatar');
+
+    .TagLabel-inner {
+      font-size: 14px;
+      font-weight: bold;
+      position: absolute;
+      bottom: 8px;
+      width: 100%;
+      text-align: center;
+    }
+    .item-excerpt, .item-terminalPost {
+      font-size: 12px;
+    }
+  }
+
+  &Item {
+    background: @control-bg;
+    margin: 0 0 4px;
+    padding: 0;
+    border-radius: @border-radius;
+
+    &-controls .Dropdown-toggle {
+      position: absolute;
+      top: -20px;
+      right: -8px;
+      width: 35px;
+      height: 35px;
+      border-radius: 5px;
+      border-width: 0 35px 35px 0;
+      color: #ffffff;
+    }
+
+    &-info {
+      font-size: 12px;
+    }
+
+    &--unapproved {
+      background-color: @unapproved-discussion-bg;
+
+      .DiscussionListItem-content {
+        opacity: 1;
+      }
+    }
+
+    &-badges {
+      .Badge {
+        --size: 20px;
+        box-shadow: -1px 1px 2px #00000038;
+        width: var(--size);
+        height: var(--size);
+        line-height: var(--size);
+
+        &-icon {
+          font-size: 10px;
+        }
+      }
+    }
+  }
+
+  &-loadMore {
+    margin-top: 5px;
+
+    .Button {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.StickyNoteMinimal, .StickyNoteMinimalTag, .StickyNoteMinimalFilingTag, .StickyNoteMinimalBanner {
+  .DiscussionListItem {
+    & {
+      border-radius: 15px 42px 15px 15px
+    }
+    &--primary {
+      font-weight: bold;
+      position: absolute;
+      top: -2px;
+      left: 10px;
+      font-size: 16px;
+    }
+    &--secondary {
+      font-weight: bold;
+      position: absolute;
+      right: 10px;
+      font-size: 12px;
+    }
+    &--unread {
+      content: "";
+      position: absolute;
+      top: -1px;
+      right: -1px;
+      width: 35px;
+      height: 35px;
+      border-radius: 5px;
+      border-width: 0 35px 35px 0;
+      border-style: solid;
+    }
+    &--unread::after {
+      content: "";
+      position: absolute;
+      top: -1px;
+      right: -35px;
+      width: 35px;
+      height: 35px;
+      border-radius: 5px;
+      border-width: 0 35px 35px 0;
+      border-style: solid;
+      border-color: transparent @body-bg
+    }
+
+    &--read {
+      content: "";
+      position: absolute;
+      top: -1px;
+      right: -1px;
+      width: 35px;
+      height: 35px;
+      border-radius: 5px;
+      border-width: 0 35px 35px 0;
+      border-style: solid;
+    }
+    &--read::after {
+      content: "";
+      position: absolute;
+      top: -1px;
+      right: -35px;
+      width: 35px;
+      height: 35px;
+      border-radius: 5px;
+      border-width: 0 35px 35px 0;
+      border-style: solid;
+      border-color: transparent @body-bg
+    }
+    &-footer {
+      & {
+        height: 25px;
+      }
+      .PrimaryTagLabel {
+        font-size: 14px;
+        font-weight: bold;
+        position: absolute;
+        bottom: 6px;
+        left: 0;
+        border-radius: 0 5px 0 5px;
+        padding-top: 2px;
+        padding-right: 5px;
+        padding-bottom: 2px;
+        padding-left: 5px;
+      }
+    }
+    &--filingfooter {
+      & {
+        height: 24px;
+        border-radius: 0 0 0 0;
+        position: absolute;
+        width: 100%;
+        left: 0;
+        bottom: 0;
+        background: @body-bg
+      }
+      .PrimaryTagLabel {
+        font-size: 14px;
+        font-weight: bold;
+        position: absolute;
+        bottom: -1px;
+        left: 6px;
+        border-radius: 0 0 5px 5px;
+        padding-top: 2px;
+        padding-right: 5px;
+        padding-bottom: 2px;
+        padding-left: 5px;
+      }
+    }
+  }
+}
+
+.StickyNote, .StickyNoteTag, .StickyNoteBanner, .StickyNoteMinimum, .StickyNoteMinimumTag, .StickyNoteMinimumBanner {
+  .DiscussionListItem {
+    & {
+      border-radius: 15px 42px 15px 15px
+    }
+    &--secondary {
+      top: 2px;
+    }
+  }
+}
+
+.StickyNoteFilingTag {
+  .DiscussionListItem {
+    & {
+      border-radius: 0;
+    }
+    &--secondary {
+      top: 12px;
+    }
+  }
+}
+.StickyNoteMinimalFilingTag {
+  .DiscussionListItem {
+    & {
+      border-radius: 0;
+    }
+    &--secondary {
+      top: 8px;
+    }
+    &--outline {
+      border-radius: 15px 15px 15px 15px;
+      position: absolute;
+      width: 100%;
+      left: -1px;
+      pointer-events:none;
+    }
+  }
+}
+
+.StickyNoteMinimal, .StickyNoteMinimalTag, .StickyNoteMinimalBanner {
+  .DiscussionListItem {
+    &--secondary {
+      top: 0;
+    }
+    &--outline {
+      border-radius: 15px 15px 15px 15px;
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+      left: 0;
+      pointer-events:none;
+    }
+  }
+}
+
+.StickyNote, .StickyNoteTag, .StickyNoteFilingTag, .StickyNoteBanner {
+  .DiscussionListItem {
+    &--primary {
+      font-weight: bold;
+      position: absolute;
+      top: -2px;
+      left: 10px;
+      font-size: 16px;
+    }
+    &--secondary {
+      font-weight: bold;
+      position: absolute;
+      right: 10px;
+      font-size: 12px;
+    }
+    &--unread {
+      content: "";
+      position: absolute;
+      top: -1px;
+      right: -1px;
+      width: 35px;
+      height: 35px;
+      border-radius: 5px;
+      border-width: 0 35px 35px 0;
+      border-style: solid;
+    }
+    &--unread::after {
+      content: "";
+      position: absolute;
+      top: -1px;
+      right: -35px;
+      width: 35px;
+      height: 35px;
+      border-radius: 5px;
+      border-width: 0 35px 35px 0;
+      border-style: solid;
+      border-color: transparent @body-bg
+    }
+
+    &--read {
+      content: "";
+      position: absolute;
+      top: -1px;
+      right: -1px;
+      width: 35px;
+      height: 35px;
+      border-radius: 5px;
+      border-width: 0 35px 35px 0;
+      border-style: solid;
+    }
+    &--read::after {
+      content: "";
+      position: absolute;
+      top: -1px;
+      right: -35px;
+      width: 35px;
+      height: 35px;
+      border-radius: 5px;
+      border-width: 0 35px 35px 0;
+      border-style: solid;
+      border-color: transparent @body-bg
+    }
+    &-footer {
+      & {
+        height: 24px;
+      }
+      .PrimaryTagLabel {
+        font-size: 14px;
+        font-weight: bold;
+        position: absolute;
+        bottom: 6px;
+        left: 6px;
+        border-radius: 5px;
+        padding-top: 2px;
+        padding-right: 5px;
+        padding-bottom: 2px;
+        padding-left: 5px;
+      }
+    }
+    &--outline {
+      border-radius: 15px 15px 15px 15px;
+      position: absolute;
+      width: 100%;
+      height: calc(100% - 10px);
+      bottom: 10px;
+      left: 0;
+      pointer-events:none;
+    }
+    &--filingfooter {
+      & {
+        height: 28px;
+        border-radius: 0 0 0 0;
+        position: absolute;
+        width: 100%;
+        left: 0%;
+        bottom: -5px;
+        background: @body-bg
+      }
+      .PrimaryTagLabel {
+        font-size: 14px;
+        font-weight: bold;
+        position: absolute;
+        bottom: -5px;
+        left: 10px;
+        border-radius: 0 0 5px 5px;
+        padding-top: 2px;
+        padding-right: 5px;
+        padding-bottom: 2px;
+        padding-left: 5px;
+      }
+    }
+  }
+}
+
+.App {
+  .TagLinkButton {
+    display: flex !important;
+  }
+  .item-moreTags {
+    visibility: hidden !important
+  }
+  .IndexPage .DiscussionListItem,
+  .UserPage .DiscussionListItem {
+    &-info {
+      > .item-tags {
+        top: 0;
+        right: 0;
+      }
+    }
+  }
+
+  .DiscussionListItem {
+    &-info-edit {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      font-size: 11px;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap
+    }
+
+    &-title-edit{
+      margin: 0 0 3px;
+      line-height: 1.3;
+      font-weight: normal;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-size: 20px;
+    }
+
+    &-main {
+      padding: 0;
+      margin: 0;
+      position: relative;
+    }
+
+    &-badges {
+      margin: 0;
+      width: auto;
+      float: none;
+      position: absolute;
+      right: -7px;
+      top: -4px;
+      display: block;
+    }
+
+    &-author {
+      float: none;
+      margin: 0;
+      display: block;
+
+      &-container {
+        margin-right: 15px;
+        position: relative;
+
+        > .tooltip {
+          width: max-content;
+        }
+      }
+
+      .Avatar {
+        .asirem-icon-block(50px, @body-bg);
+      }
+    }
+
+    &-content {
+      display: flex;
+      padding: 12px;
+      margin-bottom: 12px;
+    }
+
+    &-stats {
+      margin-left: 10px;
+      margin-right: 15px;
+    }
+
+    &-count {
+      margin: 0;
+      padding: 0;
+      float: none;
+      display: block;
+
+      &::before {
+        margin: 0 5px 0 0;
+        padding: 0;
+        float: none;
+      }
+    }
+
+    &-footer {
+      border-radius: 0 0 13px 13px;
+      position: absolute;
+      width: 100%;
+      left: 0%;
+      bottom: 0%;
+    }
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  .App .TagLinkButton {
+    visibility: hidden !important;
+    display: none !important;
+  }
+}
+@media @phone {
+  .item-terminalPost {
+    display: none !important;
+  }
+  .item-tag {
+    width: 100%;
+    border-top: none;
+  }
+}

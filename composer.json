@@ -1,0 +1,54 @@
+{
+  "name": "yippy/flarum-tag-with-themes",
+  "description": "Provide multiple themes choices for discussion layout by tag.",
+  "keywords": [
+    "flarum",
+    "themes",
+    "base",
+    "tag"
+  ],
+  "type": "flarum-extension",
+  "license": "MIT",
+  "funding": [
+      {
+          "type": "other",
+          "url": "https://www.buymeacoffee.com/yippy"
+      }
+  ],
+  "require": {
+    "flarum/core": "^1.0.0",
+    "flarum/tags": "*"
+  },
+  "authors": [
+    {
+      "name": "Yippy",
+      "email": "yippym@gmail.com",
+      "role": "Developer"
+    }
+  ],
+  "support": {
+      "issues": "https://github.com/Yippy/flarum-tag-with-themes/issues",
+      "source": "https://github.com/Yippy/flarum-tag-with-themes",
+      "forum": "[Needs replacing]"
+  },
+  "autoload": {
+    "psr-4": {
+      "Yippy\\FlarumTagWithThemes\\": "src/"
+    }
+  },
+  "extra": {
+    "flarum-extension": {
+      "title": "Tag with Themes",
+      "category": "theme",
+      "icon": {
+          "name": "fas fa-paint-roller",
+          "backgroundColor": "#684ba6",
+          "color": "#fff"
+      },
+      "optional-dependencies": [
+          "flarum/tags",
+          "flarum/approval"
+      ]
+    }
+  }
+}

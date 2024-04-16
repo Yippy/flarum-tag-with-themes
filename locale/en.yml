@@ -1,0 +1,16 @@
+yippy-tag-with-themes:
+  admin:
+    labels:
+      design_default: Discussion Design Layout
+    helps:
+      design_default: Select a default design layout
+    options:
+      design_options:
+        sticky_note: Sticky Note
+        sticky_note_tag: Sticky Note (Primary Tag)
+        sticky_note_filing_tag: Sticky Note (Primary Filing Tag)
+        sticky_note_banner: Sticky Note (Primary Banner)
+        sticky_note_minimal: Sticky Note Minimal
+        sticky_note_minimal_tag: Sticky Note Minimal (Primary Tag)
+        sticky_note_minimal_filing_tag: Sticky Note Minimal (Primary Filing Tag)
+        sticky_note_minimal_banner: Sticky Note Minimal (Primary Banner)
