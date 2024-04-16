@@ -8,18 +8,32 @@ This extension allows Administrators to display different themes for discussions
 
 This extension requires PHP 7.4 or higher.
 
-    composer require yippy/flarum-tag-with-themes
+    `composer require yippy/flarum-tag-with-themes`
+
+Must load images example
+
+    `php flarum assets:publish`
 
 ## Flarum Tag with Themes
 
 Currently the default Flarum design theme does not cater for different theme style with Tags that are assigned to the discussion. This was created to allow Administrators to change the entire themes with Tag Theming. Currently there is only eight styles of themes, and in the future there can be additional themes. 
 
 ### Themes
+
+Setup example within the Tags Settings Extension
+![Tag Setup](/assets/images/tag_setup.png)
+
 Sticky Note 
-![Sticky Note Theme](/assets/images/sticky_note_theme_designs.png)
+![Sticky Note Theme](/assets/images/sticky_note_theme.png)
+![Sticky Note (Primary Tag) Theme](/assets/images/sticky_note_theme_-_primary_tag.png)
+![Sticky Note (Primary Tab) Theme](/assets/images/sticky_note_theme_-_primary_tab.png)
+![Sticky Note (Primary Banner) Theme](/assets/images/sticky_note_theme_-_primary_banner.png)
 
 Sticky Note Outline
-![Sticky Note Outline Theme](/assets/images/sticky_note_outline_theme_designs.png)
+![Sticky Note Outline Theme](/assets/images/sticky_note_outline_theme.png)
+![Sticky Note Outline (Primary Banner) Theme](/assets/images/sticky_note_outline_theme_-_primary_banner.png)
+![Sticky Note Outline (Primary Banner) Theme](/assets/images/sticky_note_outline_theme_-_primary_banner.png)
+![Sticky Note Outline (Primary Banner) Theme](/assets/images/sticky_note_outline_theme_-_primary_banner.png)
 
 ## Support
 
