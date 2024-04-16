@@ -28,8 +28,7 @@
   ],
   "support": {
       "issues": "https://github.com/Yippy/flarum-tag-with-themes/issues",
-      "source": "https://github.com/Yippy/flarum-tag-with-themes",
-      "forum": "[Needs replacing]"
+      "source": "https://github.com/Yippy/flarum-tag-with-themes"
   },
   "autoload": {
     "psr-4": {
