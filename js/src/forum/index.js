@@ -28,7 +28,7 @@ const designOptions = {
     outlineBackgroundColor: '#595a58',
     unreadColor: '#2199fc',
   },
-  "StickyNoteFilingTag": {
+  "StickyNoteTab": {
     isPrimaryTagBackgroundColorRequired: true,
     isPrimaryTagAnButton: true,
     primaryBackgroundColor: '#e8ecf3',
@@ -48,7 +48,7 @@ const designOptions = {
     outlineBackgroundColor: '#595a58',
     unreadColor: '#2199fc',
   },
-  "StickyNoteMinimal": {
+  "StickyNoteOutline": {
     isPrimaryTagBackgroundColorRequired: false,
     isPrimaryTagAnButton: false,
     primaryBackgroundColor: 'transparent',
@@ -58,7 +58,7 @@ const designOptions = {
     outlineBackgroundColor: '#595a58',
     unreadColor: '#2199fc',
   },
-  "StickyNoteMinimalTag": {
+  "StickyNoteOutlineTag": {
     isPrimaryTagBackgroundColorRequired: true,
     isPrimaryTagAnButton: true,
     primaryBackgroundColor: '#e8ecf3',
@@ -68,7 +68,7 @@ const designOptions = {
     outlineBackgroundColor: '#595a58',
     unreadColor: '#2199fc',
   },
-  "StickyNoteMinimalFilingTag": {
+  "StickyNoteOutlineTab": {
     isPrimaryTagBackgroundColorRequired: true,
     isPrimaryTagAnButton: true,
     primaryBackgroundColor: '#e8ecf3',
@@ -78,7 +78,7 @@ const designOptions = {
     outlineBackgroundColor: '#595a58',
     unreadColor: '#2199fc',
   },
-  "StickyNoteMinimalBanner": {
+  "StickyNoteOutlineBanner": {
     isPrimaryTagBackgroundColorRequired: true,
     isPrimaryTagAnButton: false,
     primaryBackgroundColor: '#e8ecf3',
@@ -143,7 +143,7 @@ app.initializers.add('yippy-tag-with-themes', () => {
         let footerColor = discussionDesignOption.isPrimaryTagBackgroundColorRequired ? parentTagFound.color(): discussionDesignOption.primaryBackgroundColor;
         if (discussionDesignOption.isPrimaryTagAnButton) {
           discussionListItemContent.children.push(
-            <span class={( discussionDesign == 'StickyNoteMinimalFilingTag' || discussionDesign == 'StickyNoteFilingTag' ? 'DiscussionListItem--filingfooter': 'DiscussionListItem-footer')}>
+            <span class={( discussionDesign == 'StickyNoteOutlineTab' || discussionDesign == 'StickyNoteTab' ? 'DiscussionListItem--filingfooter': 'DiscussionListItem-footer')}>
               <span class="PrimaryTagLabel" style={'background:' + parentTagFound.color()}>
                 <span class={classList("PrimaryTagLabel-text", textContrastClass(parentTagFound.color()))}>
                   <i class={'PrimaryTagLabel-icon ' + parentTagFound.data.attributes.icon + " fa-1x"}></i>
@@ -168,7 +168,7 @@ app.initializers.add('yippy-tag-with-themes', () => {
       backgroundColor = childTagFound.color();
     }
     switch(discussionDesign) {
-      case 'StickyNoteFilingTag':
+      case 'StickyNoteTab':
         if(childTagFound) {
           discussionListItemContent.children.push(
             <span class='DiscussionListItem--outline' style={'box-shadow:' +('inset -15px -15px 0px 0px '+backgroundColor)}>
@@ -176,15 +176,15 @@ app.initializers.add('yippy-tag-with-themes', () => {
           );
         }
         break;
-      case 'StickyNoteMinimal':
-      case 'StickyNoteMinimalTag':
-      case 'StickyNoteMinimalBanner':
+      case 'StickyNoteOutline':
+      case 'StickyNoteOutlineTag':
+      case 'StickyNoteOutlineBanner':
         discussionListItemContent.children.push(
           <span class='DiscussionListItem--outline' style={'box-shadow:' +('inset -6px -6px 0px 0px '+backgroundColor+'; height: 100%; bottom: 0;')}>
           </span>
         );
         break;
-      case 'StickyNoteMinimalFilingTag':
+      case 'StickyNoteOutlineTab':
         if(childTagFound) {
           discussionListItemContent.children.push(
             <span class='DiscussionListItem--outline' style={'box-shadow:' +('inset -6px -6px 0px 0px '+backgroundColor+';height: calc(100% - 25px); bottom: 18px;')}>

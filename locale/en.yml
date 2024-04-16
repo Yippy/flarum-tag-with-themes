@@ -8,9 +8,9 @@ yippy-tag-with-themes:
       design_options:
         sticky_note: Sticky Note
         sticky_note_tag: Sticky Note (Primary Tag)
-        sticky_note_filing_tag: Sticky Note (Primary Filing Tag)
+        sticky_note_tab: Sticky Note (Primary Tab)
         sticky_note_banner: Sticky Note (Primary Banner)
-        sticky_note_minimal: Sticky Note Minimal
-        sticky_note_minimal_tag: Sticky Note Minimal (Primary Tag)
-        sticky_note_minimal_filing_tag: Sticky Note Minimal (Primary Filing Tag)
-        sticky_note_minimal_banner: Sticky Note Minimal (Primary Banner)
+        sticky_note_outline: Sticky Note Outline
+        sticky_note_outline_tag: Sticky Note Outline (Primary Tag)
+        sticky_note_outline_tab: Sticky Note Outline (Primary Tab)
+        sticky_note_outline_banner: Sticky Note Outline (Primary Banner)

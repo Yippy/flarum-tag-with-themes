@@ -28,8 +28,6 @@
     text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
   }
   &-discussions > li {
-    .asirem-border-radius(~'.Avatar');
-
     .TagLabel-inner {
       font-size: 14px;
       font-weight: bold;
@@ -65,8 +63,6 @@
     }
 
     &--unapproved {
-      background-color: @unapproved-discussion-bg;
-
       .DiscussionListItem-content {
         opacity: 1;
       }
@@ -97,10 +93,10 @@
   }
 }
 
-.StickyNoteMinimal, .StickyNoteMinimalTag, .StickyNoteMinimalFilingTag, .StickyNoteMinimalBanner {
+.StickyNoteOutline, .StickyNoteOutlineTag, .StickyNoteOutlineTab, .StickyNoteOutlineBanner {
   .DiscussionListItem {
     & {
-      border-radius: 15px 42px 15px 15px
+      border-radius: @border-fold-radius
     }
     &--primary {
       font-weight: bold;
@@ -208,7 +204,7 @@
 .StickyNote, .StickyNoteTag, .StickyNoteBanner, .StickyNoteMinimum, .StickyNoteMinimumTag, .StickyNoteMinimumBanner {
   .DiscussionListItem {
     & {
-      border-radius: 15px 42px 15px 15px
+      border-radius: @border-fold-radius
     }
     &--secondary {
       top: 2px;
@@ -216,7 +212,7 @@
   }
 }
 
-.StickyNoteFilingTag {
+.StickyNoteTab {
   .DiscussionListItem {
     & {
       border-radius: 0;
@@ -226,7 +222,7 @@
     }
   }
 }
-.StickyNoteMinimalFilingTag {
+.StickyNoteOutlineTab {
   .DiscussionListItem {
     & {
       border-radius: 0;
@@ -235,7 +231,7 @@
       top: 8px;
     }
     &--outline {
-      border-radius: 15px 15px 15px 15px;
+      border-radius: @border-radius;
       position: absolute;
       width: 100%;
       left: -1px;
@@ -244,13 +240,13 @@
   }
 }
 
-.StickyNoteMinimal, .StickyNoteMinimalTag, .StickyNoteMinimalBanner {
+.StickyNoteOutline, .StickyNoteOutlineTag, .StickyNoteOutlineBanner {
   .DiscussionListItem {
     &--secondary {
       top: 0;
     }
     &--outline {
-      border-radius: 15px 15px 15px 15px;
+      border-radius: @border-radius;
       position: absolute;
       width: 100%;
       bottom: 0;
@@ -260,7 +256,7 @@
   }
 }
 
-.StickyNote, .StickyNoteTag, .StickyNoteFilingTag, .StickyNoteBanner {
+.StickyNote, .StickyNoteTag, .StickyNoteTab, .StickyNoteBanner {
   .DiscussionListItem {
     &--primary {
       font-weight: bold;
@@ -340,7 +336,7 @@
       }
     }
     &--outline {
-      border-radius: 15px 15px 15px 15px;
+      border-radius: @border-radius;
       position: absolute;
       width: 100%;
       height: calc(100% - 10px);
@@ -441,9 +437,6 @@
         }
       }
 
-      .Avatar {
-        .asirem-icon-block(50px, @body-bg);
-      }
     }
 
     &-content {
