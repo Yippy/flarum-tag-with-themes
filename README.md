@@ -31,8 +31,8 @@ Sticky Note
 
 Sticky Note Outline
 ![Sticky Note Outline Theme](/assets/images/sticky_note_outline_theme.png)
-![Sticky Note Outline (Primary Banner) Theme](/assets/images/sticky_note_outline_theme_-_primary_banner.png)
-![Sticky Note Outline (Primary Banner) Theme](/assets/images/sticky_note_outline_theme_-_primary_banner.png)
+![Sticky Note Outline (Primary Tag) Theme](/assets/images/sticky_note_outline_theme_-_primary_tag.png)
+![Sticky Note Outline (Primary Tab) Theme](/assets/images/sticky_note_outline_theme_-_primary_tab.png)
 ![Sticky Note Outline (Primary Banner) Theme](/assets/images/sticky_note_outline_theme_-_primary_banner.png)
 
 ## Support
