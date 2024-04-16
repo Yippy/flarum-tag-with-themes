@@ -12,7 +12,7 @@ This extension requires PHP 7.4 or higher.
 
 ## Flarum Tag with Themes
 
-Currently the default Flarum design theme does not cater for different theme style with Tags that are assigned to the discussion. This was created to allow Administrators to change the entire themes with Tag Theming. Currently there is only two styles of themes, and in the future there can be additional themes. 
+Currently the default Flarum design theme does not cater for different theme style with Tags that are assigned to the discussion. This was created to allow Administrators to change the entire themes with Tag Theming. Currently there is only eight styles of themes, and in the future there can be additional themes. 
 
 ### Themes
 Sticky Note 
@@ -29,4 +29,4 @@ This extension is under **minimal maintenance**.
 
 - [GitHub](https://github.com/Yippy/flarum-tag-with-themes)
 - [Packagist](https://packagist.org/packages/yippy/flarum-tag-with-themes)
-- [Discuss](https://discuss.flarum.org/d/)
+- [Discuss](https://discuss.flarum.org/d/34412-tag-with-themes)
