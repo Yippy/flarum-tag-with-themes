@@ -17,6 +17,7 @@ const designOptions = {
     isOutlineTagBackgroundColorRequired: false,
     outlineBackgroundColor: '#595a58',
     unreadColor: '#2199fc',
+    isTopCornerFolded: true,
   },
   "StickyNoteTag": {
     isPrimaryTagBackgroundColorRequired: true,
@@ -27,6 +28,7 @@ const designOptions = {
     isOutlineTagBackgroundColorRequired: false,
     outlineBackgroundColor: '#595a58',
     unreadColor: '#2199fc',
+    isTopCornerFolded: true,
   },
   "StickyNoteTab": {
     isPrimaryTagBackgroundColorRequired: true,
@@ -37,6 +39,7 @@ const designOptions = {
     isOutlineTagBackgroundColorRequired: false,
     outlineBackgroundColor: '#595a58',
     unreadColor: '#2199fc',
+    isTopCornerFolded: true,
   },
   "StickyNoteBanner": {
     isPrimaryTagBackgroundColorRequired: true,
@@ -47,6 +50,7 @@ const designOptions = {
     isOutlineTagBackgroundColorRequired: false,
     outlineBackgroundColor: '#595a58',
     unreadColor: '#2199fc',
+    isTopCornerFolded: true,
   },
   "StickyNoteOutline": {
     isPrimaryTagBackgroundColorRequired: false,
@@ -57,6 +61,7 @@ const designOptions = {
     isOutlineTagBackgroundColorRequired: true,
     outlineBackgroundColor: '#595a58',
     unreadColor: '#2199fc',
+    isTopCornerFolded: true,
   },
   "StickyNoteOutlineTag": {
     isPrimaryTagBackgroundColorRequired: true,
@@ -67,6 +72,7 @@ const designOptions = {
     isOutlineTagBackgroundColorRequired: true,
     outlineBackgroundColor: '#595a58',
     unreadColor: '#2199fc',
+    isTopCornerFolded: true,
   },
   "StickyNoteOutlineTab": {
     isPrimaryTagBackgroundColorRequired: true,
@@ -77,6 +83,7 @@ const designOptions = {
     isOutlineTagBackgroundColorRequired: true,
     outlineBackgroundColor: '#595a58',
     unreadColor: '#2199fc',
+    isTopCornerFolded: true,
   },
   "StickyNoteOutlineBanner": {
     isPrimaryTagBackgroundColorRequired: true,
@@ -87,6 +94,95 @@ const designOptions = {
     isOutlineTagBackgroundColorRequired: true,
     outlineBackgroundColor: '#595a58',
     unreadColor: '#2199fc',
+    isTopCornerFolded: true,
+  },
+  "Basic": {
+    isPrimaryTagBackgroundColorRequired: false,
+    isPrimaryTagAnButton: false,
+    primaryBackgroundColor: '#e8ecf3',
+    isChildTagBackgroundColorRequired: true,
+    childBackgroundColor: '#e8ecf3',
+    isOutlineTagBackgroundColorRequired: false,
+    outlineBackgroundColor: '#595a58',
+    unreadColor: '#2199fc',
+    isTopCornerFolded: false,
+  },
+  "BasicTag": {
+    isPrimaryTagBackgroundColorRequired: true,
+    isPrimaryTagAnButton: true,
+    primaryBackgroundColor: '#e8ecf3',
+    isChildTagBackgroundColorRequired: true,
+    childBackgroundColor: '#e8ecf3',
+    isOutlineTagBackgroundColorRequired: false,
+    outlineBackgroundColor: '#595a58',
+    unreadColor: '#2199fc',
+    isTopCornerFolded: false,
+  },
+  "BasicTab": {
+    isPrimaryTagBackgroundColorRequired: true,
+    isPrimaryTagAnButton: true,
+    primaryBackgroundColor: '#e8ecf3',
+    isChildTagBackgroundColorRequired: true,
+    childBackgroundColor: '#e8ecf3',
+    isOutlineTagBackgroundColorRequired: false,
+    outlineBackgroundColor: '#595a58',
+    unreadColor: '#2199fc',
+    isTopCornerFolded: false,
+  },
+  "BasicBanner": {
+    isPrimaryTagBackgroundColorRequired: true,
+    isPrimaryTagAnButton: false,
+    primaryBackgroundColor: '#e8ecf3',
+    isChildTagBackgroundColorRequired: true,
+    childBackgroundColor: '#e8ecf3',
+    isOutlineTagBackgroundColorRequired: false,
+    outlineBackgroundColor: '#595a58',
+    unreadColor: '#2199fc',
+    isTopCornerFolded: false,
+  },
+  "BasicOutline": {
+    isPrimaryTagBackgroundColorRequired: false,
+    isPrimaryTagAnButton: false,
+    primaryBackgroundColor: 'transparent',
+    isChildTagBackgroundColorRequired: false,
+    childBackgroundColor: '#e8ecf3',
+    isOutlineTagBackgroundColorRequired: true,
+    outlineBackgroundColor: '#595a58',
+    unreadColor: '#2199fc',
+    isTopCornerFolded: false,
+  },
+  "BasicOutlineTag": {
+    isPrimaryTagBackgroundColorRequired: true,
+    isPrimaryTagAnButton: true,
+    primaryBackgroundColor: '#e8ecf3',
+    isChildTagBackgroundColorRequired: false,
+    childBackgroundColor: '#e8ecf3',
+    isOutlineTagBackgroundColorRequired: true,
+    outlineBackgroundColor: '#595a58',
+    unreadColor: '#2199fc',
+    isTopCornerFolded: false,
+  },
+  "BasicOutlineTab": {
+    isPrimaryTagBackgroundColorRequired: true,
+    isPrimaryTagAnButton: true,
+    primaryBackgroundColor: '#e8ecf3',
+    isChildTagBackgroundColorRequired: false,
+    childBackgroundColor: '#e8ecf3',
+    isOutlineTagBackgroundColorRequired: true,
+    outlineBackgroundColor: '#595a58',
+    unreadColor: '#2199fc',
+    isTopCornerFolded: false,
+  },
+  "BasicOutlineBanner": {
+    isPrimaryTagBackgroundColorRequired: true,
+    isPrimaryTagAnButton: false,
+    primaryBackgroundColor: '#e8ecf3',
+    isChildTagBackgroundColorRequired: false,
+    childBackgroundColor: '#e8ecf3',
+    isOutlineTagBackgroundColorRequired: true,
+    outlineBackgroundColor: '#595a58',
+    unreadColor: '#2199fc',
+    isTopCornerFolded: false,
   }
 };
 
@@ -142,10 +238,19 @@ app.initializers.add('yippy-tag-with-themes', () => {
         }
         let footerColor = discussionDesignOption.isPrimaryTagBackgroundColorRequired ? parentTagFound.color(): discussionDesignOption.primaryBackgroundColor;
         if (discussionDesignOption.isPrimaryTagAnButton) {
+          let footerClassName = 'DiscussionListItem-footer';
+          switch(discussionDesign) {
+            case 'StickyNoteTab':
+            case 'StickyNoteOutlineTab':
+            case 'BasicTab':
+            case 'BasicOutlineTab':
+              footerClassName = 'DiscussionListItem--tabfooter';
+              break;
+          }
           discussionListItemContent.children.push(
-            <span class={( discussionDesign == 'StickyNoteOutlineTab' || discussionDesign == 'StickyNoteTab' ? 'DiscussionListItem--filingfooter': 'DiscussionListItem-footer')}>
-              <span class="PrimaryTagLabel" style={'background:' + parentTagFound.color()}>
-                <span class={classList("PrimaryTagLabel-text", textContrastClass(parentTagFound.color()))}>
+            <span class={footerClassName}>
+              <span class="PrimaryTagLabel" style={'background:' + footerColor}>
+                <span class={classList("PrimaryTagLabel-text", textContrastClass(footerColor))}>
                   <i class={'PrimaryTagLabel-icon ' + parentTagFound.data.attributes.icon + " fa-1x"}></i>
                   <span class="PrimaryTagLabel-name">{parentTagFound.data.attributes.name}</span>
                 </span>
@@ -169,6 +274,7 @@ app.initializers.add('yippy-tag-with-themes', () => {
     }
     switch(discussionDesign) {
       case 'StickyNoteTab':
+      case 'BasicTab':
         if(childTagFound) {
           discussionListItemContent.children.push(
             <span class='DiscussionListItem--outline' style={'box-shadow:' +('inset -15px -15px 0px 0px '+backgroundColor)}>
@@ -179,37 +285,50 @@ app.initializers.add('yippy-tag-with-themes', () => {
       case 'StickyNoteOutline':
       case 'StickyNoteOutlineTag':
       case 'StickyNoteOutlineBanner':
+      case 'BasicOutline':
+      case 'BasicOutlineTag':
+      case 'BasicOutlineBanner':
         discussionListItemContent.children.push(
           <span class='DiscussionListItem--outline' style={'box-shadow:' +('inset -6px -6px 0px 0px '+backgroundColor+'; height: 100%; bottom: 0;')}>
           </span>
         );
         break;
       case 'StickyNoteOutlineTab':
+      case 'BasicOutlineTab':
         if(childTagFound) {
           discussionListItemContent.children.push(
-            <span class='DiscussionListItem--outline' style={'box-shadow:' +('inset -6px -6px 0px 0px '+backgroundColor+';height: calc(100% - 25px); bottom: 18px;')}>
+            <span class='DiscussionListItem--outline' style={'box-shadow:' +('inset -6px -6px 0px 0px '+backgroundColor+';height: calc(100% - 18px); bottom: 18px;')}>
             </span>
           );
-          break;
         } else {
           discussionListItemContent.children.push(
             <span class='DiscussionListItem--outline' style={'box-shadow:' +('inset -6px -6px 0px 0px '+backgroundColor+'; height: 100%; bottom: 0;')}>
             </span>
           );
         }
-
+        break;
     }
+    const foldedClassname = discussionDesignOption.isTopCornerFolded? 'folded': '';
     if (childTagFound) {
       vnode.attrs.style = {'background': (discussionDesignOption.isChildTagBackgroundColorRequired? childTagFound.color(): discussionDesignOption.childBackgroundColor), ...(vnode.attrs.style || {}) };
-
-      discussionListItemContent.children.push(<span class=' DiscussionListItem--read' style={'border-color:' + (discussionDesignOption.isOutlineTagBackgroundColorRequired ? childTagFound.color() : discussionDesignOption.outlineBackgroundColor)}></span>);
     } else {
       vnode.attrs.style = {'background': discussionDesignOption.childBackgroundColor, ...(vnode.attrs.style || {}) };
-
-      discussionListItemContent.children.push(<span class=' DiscussionListItem--read' style={'border-color:' + discussionDesignOption.outlineBackgroundColor}></span>);
     }
-    if (this.attrs.discussion.isUnread()) {
-      discussionListItemContent.children.push(<span class=' DiscussionListItem--unread' style={'border-color:' +discussionDesignOption.unreadColor}></span>);
+    if (discussionDesignOption.isTopCornerFolded) {
+      if (childTagFound) {
+        vnode.attrs.style = {'background': (discussionDesignOption.isChildTagBackgroundColorRequired? childTagFound.color(): discussionDesignOption.childBackgroundColor), ...(vnode.attrs.style || {}) };
+
+        discussionListItemContent.children.push(<span class={'DiscussionListItem--read'+foldedClassname} style={'border-color:' + (discussionDesignOption.isOutlineTagBackgroundColorRequired ? childTagFound.color() : discussionDesignOption.outlineBackgroundColor)}></span>);
+      } else {
+        discussionListItemContent.children.push(<span class={'DiscussionListItem--read'+foldedClassname} style={'border-color:' + discussionDesignOption.outlineBackgroundColor}></span>);
+      }
+      if (this.attrs.discussion.isUnread()) {
+        discussionListItemContent.children.push(<span class={'DiscussionListItem--unread'+foldedClassname} style={'border-color:' +discussionDesignOption.unreadColor}></span>);
+      }
+    } else {
+      if (this.attrs.discussion.isUnread()) {
+        discussionListItemContent.children.push(<span class={'DiscussionListItem--unread'+foldedClassname} style={'background:' +discussionDesignOption.unreadColor}></span>);
+      }
     }
     vnode.attrs.className += ' ' + discussionDesign;
   });

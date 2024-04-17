@@ -93,7 +93,7 @@
   }
 }
 
-.StickyNoteOutline, .StickyNoteOutlineTag, .StickyNoteOutlineTab, .StickyNoteOutlineBanner {
+.StickyNoteOutline, .StickyNoteOutlineTag, .StickyNoteOutlineTab, .StickyNoteOutlineBanner, .BasicOutline, .BasicOutlineTag, .BasicOutlineTab, .BasicOutlineBanner {
   .DiscussionListItem {
     & {
       border-radius: @border-fold-radius
@@ -112,47 +112,52 @@
       font-size: 12px;
     }
     &--unread {
+      width: 30px;
+      height: 25px;
+      border-radius: 50%;
+    }
+    &--unreadfolded {
       content: "";
       position: absolute;
       top: -1px;
-      right: -1px;
+      right: 1px;
       width: 35px;
       height: 35px;
       border-radius: 5px;
-      border-width: 0 35px 35px 0;
+      border-width: @border-fold-width;
       border-style: solid;
     }
-    &--unread::after {
+    &--unreadfolded::after {
       content: "";
       position: absolute;
       top: -1px;
-      right: -35px;
-      width: 35px;
-      height: 35px;
-      border-radius: 5px;
-      border-width: 0 35px 35px 0;
+      right: -36px;
+      width: 37px;
+      height: 37px;
+      border-radius: 0 0 0 5px;
+      border-width: @border-fold-width;
       border-style: solid;
       border-color: transparent @body-bg
     }
 
-    &--read {
+    &--readfolded {
       content: "";
       position: absolute;
       top: -1px;
-      right: -1px;
+      right: 1px;
       width: 35px;
       height: 35px;
-      border-radius: 5px;
-      border-width: 0 35px 35px 0;
+      border-radius: 0 0 0 5px;
+      border-width: @border-fold-width;
       border-style: solid;
     }
-    &--read::after {
+    &--readfolded::after {
       content: "";
       position: absolute;
       top: -1px;
-      right: -35px;
-      width: 35px;
-      height: 35px;
+      right: -36px;
+      width: 37px;
+      height: 37px;
       border-radius: 5px;
       border-width: 0 35px 35px 0;
       border-style: solid;
@@ -175,7 +180,7 @@
         padding-left: 5px;
       }
     }
-    &--filingfooter {
+    &--tabfooter {
       & {
         height: 24px;
         border-radius: 0 0 0 0;
@@ -201,7 +206,7 @@
   }
 }
 
-.StickyNote, .StickyNoteTag, .StickyNoteBanner, .StickyNoteMinimum, .StickyNoteMinimumTag, .StickyNoteMinimumBanner {
+.StickyNote, .StickyNoteTag, .StickyNoteBanner, .StickyNoteMinimum, .StickyNoteMinimumTag, .StickyNoteMinimumBanner, .Basic, .BasicTag, .BasicBanner, .BasicMinimum, .BasicMinimumTag, .BasicMinimumBanner {
   .DiscussionListItem {
     & {
       border-radius: @border-fold-radius
@@ -212,7 +217,7 @@
   }
 }
 
-.StickyNoteTab {
+.StickyNoteTab, .BasicTab {
   .DiscussionListItem {
     & {
       border-radius: 0;
@@ -222,7 +227,7 @@
     }
   }
 }
-.StickyNoteOutlineTab {
+.StickyNoteOutlineTab, .BasicOutlineTab {
   .DiscussionListItem {
     & {
       border-radius: 0;
@@ -240,7 +245,7 @@
   }
 }
 
-.StickyNoteOutline, .StickyNoteOutlineTag, .StickyNoteOutlineBanner {
+.StickyNoteOutline, .StickyNoteOutlineTag, .StickyNoteOutlineBanner, .BasicOutline, .BasicOutlineTag, .BasicOutlineBanner {
   .DiscussionListItem {
     &--secondary {
       top: 0;
@@ -256,7 +261,7 @@
   }
 }
 
-.StickyNote, .StickyNoteTag, .StickyNoteTab, .StickyNoteBanner {
+.StickyNote, .StickyNoteTag, .StickyNoteTab, .StickyNoteBanner, .Basic, .BasicTag, .BasicTab, .BasicBanner {
   .DiscussionListItem {
     &--primary {
       font-weight: bold;
@@ -272,47 +277,52 @@
       font-size: 12px;
     }
     &--unread {
+      width: 30px;
+      height: 25px;
+      border-radius: 50%;
+    }
+    &--unreadfolded {
       content: "";
       position: absolute;
       top: -1px;
-      right: -1px;
+      right: 1px;
       width: 35px;
       height: 35px;
       border-radius: 5px;
-      border-width: 0 35px 35px 0;
+      border-width: @border-fold-width;
       border-style: solid;
     }
-    &--unread::after {
+    &--unreadfolded::after {
       content: "";
       position: absolute;
       top: -1px;
-      right: -35px;
-      width: 35px;
-      height: 35px;
+      right: -36px;
+      width: 37px;
+      height: 37px;
       border-radius: 5px;
-      border-width: 0 35px 35px 0;
+      border-width: @border-fold-width;
       border-style: solid;
       border-color: transparent @body-bg
     }
 
-    &--read {
+    &--readfolded {
       content: "";
       position: absolute;
       top: -1px;
-      right: -1px;
+      right: 1px;
       width: 35px;
       height: 35px;
       border-radius: 5px;
-      border-width: 0 35px 35px 0;
+      border-width: @border-fold-width;
       border-style: solid;
     }
-    &--read::after {
+    &--readfolded::after {
       content: "";
       position: absolute;
       top: -1px;
-      right: -35px;
-      width: 35px;
-      height: 35px;
+      right: -36px;
+      width: 37px;
+      height: 37px;
       border-radius: 5px;
       border-width: 0 35px 35px 0;
       border-style: solid;
@@ -344,7 +354,7 @@
       left: 0;
       pointer-events:none;
     }
-    &--filingfooter {
+    &--tabfooter {
       & {
         height: 28px;
         border-radius: 0 0 0 0;
