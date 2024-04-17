@@ -42,7 +42,7 @@
       "category": "theme",
       "icon": {
           "name": "fas fa-paint-roller",
-          "backgroundColor": "#684ba6",
+          "background": "linear-gradient(90deg, #5461c8 12.5%, #c724b1 0, #c724b1 25%, #e4002b 0, #e4002b 37.5%, #ff6900 0, #ff6900 50%, #f6be00 0, #f6be00 62.5%, #97d700 0, #97d700 75%, #00ab84 0, #00ab84 87.5%, #00a3e0 0)",
           "color": "#fff"
       },
       "optional-dependencies": [
