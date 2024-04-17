@@ -3,7 +3,12 @@
     "version": "0.0.0",
     "private": true,
     "prettier": "@flarum/prettier-config",
-    "dependencies": {},
+    "dependencies": {
+        "flarum-tsconfig": "^1.0.2",
+        "webpack-cli": "^5.1.4",
+        "caniuse-lite": "^1.0.30001610",
+        "statuses": "^2.0.1"
+    },
     "devDependencies": {
         "@flarum/prettier-config": "^1.0.0",
         "flarum-tsconfig": "^1.0.2",
