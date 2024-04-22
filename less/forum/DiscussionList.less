@@ -48,7 +48,6 @@
     background: @control-bg;
     margin: 0 0 4px;
     padding: 0;
-    border-radius: @border-radius;
 
     &-controls .Dropdown-toggle {
       position: absolute;
@@ -101,124 +100,138 @@
   top: -1px !important;
   right: 5px !important;
 }
+
 .StickyNoteOutline, .StickyNoteOutlineTag, .StickyNoteOutlineTab, .StickyNoteOutlineBanner, .BasicOutline, .BasicOutlineTag, .BasicOutlineTab, .BasicOutlineBanner {
   .DiscussionListItem {
-    & {
-      border-radius: @border-fold-radius
-    }
-    &--primary {
-      font-weight: bold;
-      position: absolute;
-      top: -2px;
-      left: 10px;
-      font-size: 16px;
-    }
-    &--secondary {
-      font-weight: bold;
-      position: absolute;
-      right: 10px;
-      font-size: 12px;
-    }
-    &--unread {
-      width: 30px;
-      height: 25px;
-      border-radius: 50%;
-    }
-    &--unreadfolded {
-      content: "";
-      position: absolute;
-      top: -1px;
-      right: 1px;
-      width: 35px;
-      height: 35px;
-      border-radius: 5px;
-      border-width: @border-fold-width;
-      border-style: solid;
-    }
-    &--unreadfolded::after {
-      content: "";
-      position: absolute;
-      top: -1px;
-      right: -36px;
-      width: 37px;
-      height: 37px;
-      border-radius: 0 0 0 5px;
-      border-width: @border-fold-width;
-      border-style: solid;
-      border-color: transparent @body-bg
-    }
-
-    &--readfolded {
-      content: "";
-      position: absolute;
-      top: -1px;
-      right: 1px;
-      width: 35px;
-      height: 35px;
-      border-radius: 0 0 0 5px;
-      border-width: @border-fold-width;
-      border-style: solid;
-    }
-    &--readfolded::after {
-      content: "";
-      position: absolute;
-      top: -1px;
-      right: -36px;
-      width: 37px;
-      height: 37px;
-      border-radius: 5px;
-      border-width: 0 35px 35px 0;
-      border-style: solid;
-      border-color: transparent @body-bg
-    }
     &-footer {
       & {
         height: 25px;
       }
       .PrimaryTagLabel {
-        font-size: 14px;
-        font-weight: bold;
-        position: absolute;
-        bottom: 6px;
-        left: 0;
         border-radius: 0 5px 0 5px;
-        padding-top: 2px;
-        padding-right: 5px;
-        padding-bottom: 2px;
-        padding-left: 5px;
+        left: 0;
+        bottom: 6px;
       }
     }
     &--tabfooter {
       & {
-        height: 24px;
         border-radius: 0 0 0 0;
-        position: absolute;
-        width: 100%;
+        height: 24px;
         left: 0;
         bottom: 0;
-        background: @body-bg
       }
       .PrimaryTagLabel {
-        font-size: 14px;
-        font-weight: bold;
-        position: absolute;
+        border-radius: 0 0 5px 5px;
         bottom: -1px;
         left: 6px;
-        border-radius: 0 0 5px 5px;
-        padding-top: 2px;
-        padding-right: 5px;
-        padding-bottom: 2px;
-        padding-left: 5px;
       }
     }
   }
 }
 
+.StickyNote, .StickyNoteTag, .StickyNoteTab, .StickyNoteBanner, .Basic, .BasicTag, .BasicTab, .BasicBanner {
+  .DiscussionListItem {
+    &-footer {
+      & {
+        height: 24px;
+      }
+      .PrimaryTagLabel {
+        border-radius: 5px;
+        left: 6px;
+        bottom: 6px;
+      }
+    }
+    &--tabfooter {
+      & {
+        height: 28px;
+        border-radius: 0 0 0 0;
+        left: 0;
+        bottom: -5px;
+      }
+      .PrimaryTagLabel {
+        border-radius: 0 0 5px 5px;
+        bottom: -5px;
+        left: 10px;
+      }
+    }
+  }
+}
+
+.FlatBorder, .FlatBorderTag, .FlatBorderTab, .FlatBorderBanner {
+  .DiscussionListItem {
+    &-footer {
+      & {
+        height: 25px;
+      }
+      .PrimaryTagLabel {
+        left: 6px;
+        bottom: 6px;
+      }
+      .DiscussionListItem--secondary {
+        .TagLabel {
+          border-radius: 0 0 0 0;
+        }
+      }
+    }
+    &--tabfooter {
+      & {
+        border-radius: 0 0 0 0;
+        height: 24px;
+        left: 0;
+        bottom: 0;
+      }
+      .PrimaryTagLabel {
+        bottom: -1px;
+        left: 6px;
+      }
+      .DiscussionListItem--secondary {
+        .TagLabel {
+          border-radius: 0 0 0 0;
+        }
+      }
+    }
+  }
+}
+
+.Flat, .FlatTag, .FlatTab, .FlatBanner {
+  .DiscussionListItem {
+    &-footer {
+      & {
+        height: 24px;
+      }
+      .PrimaryTagLabel {
+        left: 6px;
+        bottom: 6px;
+      }
+      .DiscussionListItem--secondary {
+        .TagLabel {
+          border-radius: 0 0 0 0;
+        }
+      }
+    }
+    &--tabfooter {
+      & {
+        height: 28px;
+        border-radius: 0 0 0 0;
+        left: 0;
+        bottom: -2px;
+      }
+      .PrimaryTagLabel {
+        bottom: 3px;
+        left: 10px;
+      }
+      .DiscussionListItem--secondary {
+        .TagLabel {
+          border-radius: 0 0 0 0;
+        }
+      }
+    }
+  }
+}
+
+
 .StickyNote, .StickyNoteTag, .StickyNoteBanner, .StickyNoteMinimum, .StickyNoteMinimumTag, .StickyNoteMinimumBanner, .Basic, .BasicTag, .BasicBanner, .BasicMinimum, .BasicMinimumTag, .BasicMinimumBanner {
   .DiscussionListItem {
-    & {
-      border-radius: @border-fold-radius
-    }
     &--secondary {
       top: 2px;
     }
@@ -227,9 +240,6 @@
 
 .StickyNoteTab, .BasicTab {
   .DiscussionListItem {
-    & {
-      border-radius: 0;
-    }
     &--secondary {
       top: 12px;
     }
@@ -237,9 +247,6 @@
 }
 .StickyNoteOutlineTab, .BasicOutlineTab {
   .DiscussionListItem {
-    & {
-      border-radius: 0;
-    }
     &--secondary {
       top: 8px;
     }
@@ -252,6 +259,28 @@
     }
   }
 }
+
+.FlatBorderTab {
+  .DiscussionListItem {
+    &-footer {
+      border-radius: 0 0 0 4px;
+      position: absolute;
+      width: 100%;
+      left: 0%;
+      bottom: 0%;
+    }
+    &--secondary {
+      top: 4px;
+    }
+    &--outline {
+      position: absolute;
+      width: 100%;
+      left: -1px;
+      pointer-events:none;
+    }
+  }
+}
+
 
 .StickyNoteOutline, .StickyNoteOutlineTag, .StickyNoteOutlineBanner, .BasicOutline, .BasicOutlineTag, .BasicOutlineBanner {
   .DiscussionListItem {
@@ -268,91 +297,19 @@
     }
   }
 }
-
-.StickyNote, .StickyNoteTag, .StickyNoteTab, .StickyNoteBanner, .Basic, .BasicTag, .BasicTab, .BasicBanner {
+.StickyNote, .StickyNoteTag, .StickyNoteTab, .StickyNoteBanner, .StickyNoteOutline, .StickyNoteOutlineTag, .StickyNoteOutlineTab, .StickyNoteOutlineBanner, .BasicOutline, .BasicOutlineTag, .BasicOutlineTab, .BasicOutlineBanner, .Basic, .BasicTag, .BasicTab, .BasicBanner {
   .DiscussionListItem {
-    &--primary {
-      font-weight: bold;
-      position: absolute;
-      top: -2px;
-      left: 10px;
-      font-size: 16px;
-    }
-    &--secondary {
-      font-weight: bold;
-      position: absolute;
-      right: 10px;
-      font-size: 12px;
-    }
-    &--unread {
-      width: 30px;
-      height: 25px;
-      border-radius: 50%;
-    }
-    &--unreadfolded {
-      content: "";
-      position: absolute;
-      top: -1px;
-      right: 1px;
-      width: 35px;
-      height: 35px;
-      border-radius: 5px;
-      border-width: @border-fold-width;
-      border-style: solid;
-    }
-    &--unreadfolded::after {
-      content: "";
-      position: absolute;
-      top: -1px;
-      right: -36px;
-      width: 37px;
-      height: 37px;
-      border-radius: 5px;
-      border-width: @border-fold-width;
-      border-style: solid;
-      border-color: transparent @body-bg
-    }
-
-    &--readfolded {
-      content: "";
-      position: absolute;
-      top: -1px;
-      right: 1px;
-      width: 35px;
-      height: 35px;
-      border-radius: 5px;
-      border-width: @border-fold-width;
-      border-style: solid;
-    }
-    &--readfolded::after {
-      content: "";
-      position: absolute;
-      top: -1px;
-      right: -36px;
-      width: 37px;
-      height: 37px;
-      border-radius: 5px;
-      border-width: 0 35px 35px 0;
-      border-style: solid;
-      border-color: transparent @body-bg
-    }
     &-footer {
-      & {
-        height: 24px;
-      }
-      .PrimaryTagLabel {
-        font-size: 14px;
-        font-weight: bold;
-        position: absolute;
-        bottom: 6px;
-        left: 6px;
-        border-radius: 5px;
-        padding-top: 2px;
-        padding-right: 5px;
-        padding-bottom: 2px;
-        padding-left: 5px;
-      }
+      border-radius: 0 0 13px 13px;
+      position: absolute;
+      width: 100%;
+      left: 0%;
+      bottom: 0%;
     }
+  }
+}
+.StickyNote, .StickyNoteTag, .StickyNoteTab, .StickyNoteBanner, .BasicTab {
+  .DiscussionListItem {
     &--outline {
       border-radius: @border-radius;
       position: absolute;
@@ -362,28 +319,29 @@
       left: 0;
       pointer-events:none;
     }
-    &--tabfooter {
-      & {
-        height: 28px;
-        border-radius: 0 0 0 0;
-        position: absolute;
-        width: 100%;
-        left: 0%;
-        bottom: -5px;
-        background: @body-bg
-      }
-      .PrimaryTagLabel {
-        font-size: 14px;
-        font-weight: bold;
-        position: absolute;
-        bottom: -5px;
-        left: 10px;
-        border-radius: 0 0 5px 5px;
-        padding-top: 2px;
-        padding-right: 5px;
-        padding-bottom: 2px;
-        padding-left: 5px;
-      }
+  }
+}
+.Flat, .FlatTag, .FlatTab, .FlatBanner {
+  .DiscussionListItem {
+    &--outline {
+      border-radius: unset;
+      pointer-events:none;
+    }
+  }
+}
+
+.FlatBorder, .FlatBorderTag, .FlatBorderBanner, .Flat, .FlatTag, .FlatTab, .FlatBanner {
+  .DiscussionListItem {
+    &--secondary {
+      top: 0;
+    }
+    &--outline {
+      border-radius: unset !important;
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+      left: 0;
+      pointer-events:none;
     }
   }
 }
@@ -406,6 +364,71 @@
   }
 
   .DiscussionListItem {
+    &--primary {
+      font-weight: bold;
+      position: absolute;
+      top: -2px;
+      left: 10px;
+      font-size: 16px;
+    }
+    &--secondary {
+      font-weight: bold;
+      position: absolute;
+      right: 10px;
+      font-size: 12px;
+    }
+    &--unread {
+      width: 30px;
+      height: 25px;
+      border-radius: 50%;
+    }
+    &--unreadfolded {
+      content: "";
+      position: absolute;
+      top: -1px;
+      right: 1px;
+      width: 35px;
+      height: 35px;
+      border-radius: 5px;
+      border-width: @border-fold-width;
+      border-style: solid;
+    }
+    &--unreadfolded::after {
+      content: "";
+      position: absolute;
+      top: -1px;
+      right: -36px;
+      width: 37px;
+      height: 37px;
+      border-radius: 0 0 0 5px;
+      border-width: @border-fold-width;
+      border-style: solid;
+      border-color: transparent @body-bg
+    }
+  
+    &--readfolded {
+      content: "";
+      position: absolute;
+      top: -1px;
+      right: 1px;
+      width: 35px;
+      height: 35px;
+      border-radius: 0 0 0 5px;
+      border-width: @border-fold-width;
+      border-style: solid;
+    }
+    &--readfolded::after {
+      content: "";
+      position: absolute;
+      top: -1px;
+      right: -36px;
+      width: 37px;
+      height: 37px;
+      border-radius: 5px;
+      border-width: 0 35px 35px 0;
+      border-style: solid;
+      border-color: transparent @body-bg
+    }
     &-info-edit {
       list-style-type: none;
       padding: 0;
@@ -480,13 +503,38 @@
         float: none;
       }
     }
-
     &-footer {
-      border-radius: 0 0 13px 13px;
-      position: absolute;
-      width: 100%;
-      left: 0%;
-      bottom: 0%;
+      & {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        bottom: 0;
+      }
+      .PrimaryTagLabel {
+        font-size: 14px;
+        font-weight: bold;
+        position: absolute;
+        padding-top: 2px;
+        padding-right: 5px;
+        padding-bottom: 2px;
+        padding-left: 5px;
+      }
+    }
+    &--tabfooter {
+      & {
+        position: absolute;
+        width: 100%;
+        background: @body-bg
+      }
+      .PrimaryTagLabel {
+        font-size: 14px;
+        font-weight: bold;
+        position: absolute;
+        padding-top: 2px;
+        padding-right: 5px;
+        padding-bottom: 2px;
+        padding-left: 5px;
+      }
     }
   }
 }
@@ -503,4 +551,33 @@
   .item-tag {
     border-top: none;
   }
+}
+.DiscussionListItem.StickyNote,
+.DiscussionListItem.StickyNoteTag,
+.DiscussionListItem.StickyNoteTab,
+.DiscussionListItem.StickyNoteBanner,
+.DiscussionListItem.Basic,
+.DiscussionListItem.BasicTag,
+.DiscussionListItem.BasicTab,
+.DiscussionListItem.BasicBanner,
+.DiscussionListItem.StickyNoteOutline,
+.DiscussionListItem.StickyNoteOutlineTag,
+.DiscussionListItem.StickyNoteOutlineTab,
+.DiscussionListItem.StickyNoteOutlineBanner,
+.DiscussionListItem.BasicOutline,
+.DiscussionListItem.BasicOutlineTag,
+.DiscussionListItem.BasicOutlineTab,
+.DiscussionListItem.BasicOutlineBanner {
+  border-radius: @border-radius !important;
+}
+
+.DiscussionListItem.Flat,
+.DiscussionListItem.FlatTag,
+.DiscussionListItem.FlatTab,
+.DiscussionListItem.FlatBanner,
+.DiscussionListItem.FlatBorder,
+.DiscussionListItem.FlatBorderTag,
+.DiscussionListItem.FlatBorderTab,
+.DiscussionListItem.FlatBorderBanner {
+  border-radius: unset !important;
 }

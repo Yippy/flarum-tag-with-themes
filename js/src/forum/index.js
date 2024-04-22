@@ -183,6 +183,94 @@ const designOptions = {
     outlineBackgroundColor: '#595a58',
     unreadColor: '#2199fc',
     isTopCornerFolded: false,
+  },
+  "Flat": {
+    isPrimaryTagBackgroundColorRequired: false,
+    isPrimaryTagAnButton: false,
+    primaryBackgroundColor: '#e8ecf3',
+    isChildTagBackgroundColorRequired: true,
+    childBackgroundColor: '#e8ecf3',
+    isOutlineTagBackgroundColorRequired: false,
+    outlineBackgroundColor: '#595a58',
+    unreadColor: '#2199fc',
+    isTopCornerFolded: false,
+  },
+  "FlatTag": {
+    isPrimaryTagBackgroundColorRequired: true,
+    isPrimaryTagAnButton: true,
+    primaryBackgroundColor: '#e8ecf3',
+    isChildTagBackgroundColorRequired: true,
+    childBackgroundColor: '#e8ecf3',
+    isOutlineTagBackgroundColorRequired: false,
+    outlineBackgroundColor: '#595a58',
+    unreadColor: '#2199fc',
+    isTopCornerFolded: false,
+  },
+  "FlatTab": {
+    isPrimaryTagBackgroundColorRequired: true,
+    isPrimaryTagAnButton: true,
+    primaryBackgroundColor: '#e8ecf3',
+    isChildTagBackgroundColorRequired: true,
+    childBackgroundColor: '#e8ecf3',
+    isOutlineTagBackgroundColorRequired: false,
+    outlineBackgroundColor: '#595a58',
+    unreadColor: '#2199fc',
+    isTopCornerFolded: false,
+  },
+  "FlatBanner": {
+    isPrimaryTagBackgroundColorRequired: true,
+    isPrimaryTagAnButton: false,
+    primaryBackgroundColor: '#e8ecf3',
+    isChildTagBackgroundColorRequired: true,
+    childBackgroundColor: '#e8ecf3',
+    isOutlineTagBackgroundColorRequired: false,
+    outlineBackgroundColor: '#595a58',
+    unreadColor: '#2199fc',
+    isTopCornerFolded: false,
+  },
+  "FlatBorder": {
+    isPrimaryTagBackgroundColorRequired: false,
+    isPrimaryTagAnButton: false,
+    primaryBackgroundColor: 'transparent',
+    isChildTagBackgroundColorRequired: false,
+    childBackgroundColor: '#e8ecf3',
+    isOutlineTagBackgroundColorRequired: true,
+    outlineBackgroundColor: '#595a58',
+    unreadColor: '#2199fc',
+    isTopCornerFolded: false,
+  },
+  "FlatBorderTag": {
+    isPrimaryTagBackgroundColorRequired: true,
+    isPrimaryTagAnButton: true,
+    primaryBackgroundColor: '#e8ecf3',
+    isChildTagBackgroundColorRequired: false,
+    childBackgroundColor: '#e8ecf3',
+    isOutlineTagBackgroundColorRequired: true,
+    outlineBackgroundColor: '#595a58',
+    unreadColor: '#2199fc',
+    isTopCornerFolded: false,
+  },
+  "FlatBorderTab": {
+    isPrimaryTagBackgroundColorRequired: true,
+    isPrimaryTagAnButton: true,
+    primaryBackgroundColor: '#e8ecf3',
+    isChildTagBackgroundColorRequired: false,
+    childBackgroundColor: '#e8ecf3',
+    isOutlineTagBackgroundColorRequired: true,
+    outlineBackgroundColor: '#595a58',
+    unreadColor: '#2199fc',
+    isTopCornerFolded: false,
+  },
+  "FlatBorderBanner": {
+    isPrimaryTagBackgroundColorRequired: true,
+    isPrimaryTagAnButton: false,
+    primaryBackgroundColor: '#e8ecf3',
+    isChildTagBackgroundColorRequired: false,
+    childBackgroundColor: '#e8ecf3',
+    isOutlineTagBackgroundColorRequired: true,
+    outlineBackgroundColor: '#595a58',
+    unreadColor: '#2199fc',
+    isTopCornerFolded: false,
   }
 };
 
@@ -244,6 +332,8 @@ app.initializers.add('yippy-tag-with-themes', () => {
             case 'StickyNoteOutlineTab':
             case 'BasicTab':
             case 'BasicOutlineTab':
+            case 'FlatTab':
+            case 'FlatBorderTab':
               footerClassName = 'DiscussionListItem--tabfooter';
               break;
           }
@@ -293,6 +383,14 @@ app.initializers.add('yippy-tag-with-themes', () => {
           </span>
         );
         break;
+      case 'FlatBorder':
+      case 'FlatBorderTag':
+      case 'FlatBorderBanner':
+        discussionListItemContent.children.push(
+          <span class='DiscussionListItem--outline' style={'box-shadow:' +('inset 0 0 0 4px '+backgroundColor+'; height: 100%; bottom: 0;')}>
+          </span>
+        );
+        break;
       case 'StickyNoteOutlineTab':
       case 'BasicOutlineTab':
         if(childTagFound) {
@@ -303,6 +401,19 @@ app.initializers.add('yippy-tag-with-themes', () => {
         } else {
           discussionListItemContent.children.push(
             <span class='DiscussionListItem--outline' style={'box-shadow:' +('inset -6px -6px 0px 0px '+backgroundColor+'; height: 100%; bottom: 0;')}>
+            </span>
+          );
+        }
+        break;
+      case 'FlatBorderTab':
+        if(childTagFound) {
+          discussionListItemContent.children.push(
+            <span class='DiscussionListItem--outline' style={'box-shadow:' +('inset 0 0 0 4px '+backgroundColor+';height: calc(100% - 18px); bottom: 22px;')}>
+            </span>
+          );
+        } else {
+          discussionListItemContent.children.push(
+            <span class='DiscussionListItem--outline' style={'box-shadow:' +('inset 0 0 0 4px '+backgroundColor+'; height: 100%; bottom: 0;')}>
             </span>
           );
         }
