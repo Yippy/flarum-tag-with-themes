@@ -16,7 +16,7 @@ Must load images example
 
 ## Flarum Tag with Themes
 
-Currently the default Flarum design theme does not cater for different theme style with Tags that are assigned to the discussion. This was created to allow Administrators to change the entire themes with Tag Theming. Currently there is only eight styles of themes, and in the future there can be additional themes. 
+Currently the default Flarum design theme does not cater for different theme style with Tags that are assigned to the discussion. This was created to allow Administrators to change the entire themes with Tag Theming. Currently there is only 24 styles of themes, and in the future there can be additional themes. 
 
 ### Themes
 
@@ -34,6 +34,10 @@ Sticky Note Outline
 ![Sticky Note Outline (Primary Tag) Theme](/assets/images/sticky_note_outline_theme_-_primary_tag.png)
 ![Sticky Note Outline (Primary Tab) Theme](/assets/images/sticky_note_outline_theme_-_primary_tab.png)
 ![Sticky Note Outline (Primary Banner) Theme](/assets/images/sticky_note_outline_theme_-_primary_banner.png)
+
+### Customisation
+Switch between Design themes depending on selected Primary Tag, this help make dicussion with a specific tag to stand out more.
+![Customising design by tags](/assets/images/customising_design_by_tags_example.png)
 
 ## Support
 
