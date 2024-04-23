@@ -274,14 +274,64 @@ const designOptions = {
   }
 };
 
+let discussionDesign;
+let discussionDesignOption;
+let parentTagFound;
+let childTagFound;
+let secondaryTags;
+
+function initialiseThemeBuilder (discussionTags, app) {
+  discussionDesign = discussionDesignOption = parentTagFound = childTagFound = null;
+  secondaryTags = {
+    tag: "span",
+    attrs: {
+      class: 'DiscussionListItem--secondary',
+      style: {
+      },
+    },
+    children: []
+  };
+  if (discussionTags && discussionTags.length > 0) {
+    for (const tag of discussionTags) {
+      if (tag.data.attributes.isChild) {
+        childTagFound = tag;
+      } else if (tag.data.attributes.position == null) {
+        secondaryTags.children.push(
+          <span class="TagLabel" style={'--tag-bg:' + tag.color()}>
+            <span class={classList("TagLabel-text", textContrastClass(tag.color()))}>
+              <i class={'TagLabel-icon ' + tag.data.attributes.icon }></i>
+              <span class="TagLabel-name">{tag.data.attributes.name}</span>
+            </span>
+          </span>
+        );
+      } else {
+        parentTagFound = tag;
+      }
+    };
+  }
+  discussionDesign = app.forum.attribute('yippy-tag-with-themes.designDefault');
+  const discussionDesignByTags = app.forum.attribute('yippy-tag-with-themes.designByTags');
+  let mergeOptions = null;
+  if (parentTagFound) {
+    for (const customisedDesign of discussionDesignByTags) {
+      if(customisedDesign.isEnabled && customisedDesign.tags.includes( parentTagFound.id() )){
+        discussionDesign = customisedDesign.themeName;
+        mergeOptions = {primaryBackgroundColor: customisedDesign.primaryBackgroundColor, childBackgroundColor: customisedDesign.childBackgroundColor, outlineBackgroundColor: customisedDesign.outlineBackgroundColor, unreadColor: customisedDesign.unreadColor}
+        break;
+      }
+    }
+  }
+  discussionDesignOption = designOptions[discussionDesign];
+  if (mergeOptions) {
+    discussionDesignOption = Object.assign({}, discussionDesignOption, mergeOptions);
+  }
+}
+
 app.initializers.add('yippy-tag-with-themes', () => {
   extend(DiscussionListItem.prototype, 'view', function (vnode) {
     const discussionListItemContent = vnode.children.find(
       (e) => e && e.tag === 'div' && e.attrs && e.attrs.className.includes('DiscussionListItem-content')
     );
-    let discussionDesign = app.forum.attribute('yippy-tag-with-themes.designDefault');
-    let discussionDesignOption = designOptions[discussionDesign];
-
     discussionListItemContent.children[0] = (
       <div className='DiscussionListItem-author-container'>{[discussionListItemContent.children[0], discussionListItemContent.children[1]]}</div>
     );
@@ -290,74 +340,44 @@ app.initializers.add('yippy-tag-with-themes', () => {
 
     discussionListItemContent.children[3] = <div className='DiscussionListItem-stats'>{discussionListItemContent.children[3]}</div>;
 
-    let childTagFound = null;
-    let parentTagFound = null;
-    if (this.attrs.discussion.tags() && this.attrs.discussion.tags().length > 0) {
-      // Collect all secondary tags that has position set as 'null'
-      let secondaryTags = {
-        tag: "span",
-        attrs: {
-          class: 'DiscussionListItem--secondary',
-          style: {
-          },
-        },
-        children: []
-      };
-      for (const tag of this.attrs.discussion.tags()) {
-        if (tag.data.attributes.isChild) {
-          childTagFound = tag;
-        } else if (tag.data.attributes.position == null) {
-          secondaryTags.children.push(
-            <span class="TagLabel" style={'--tag-bg:' + tag.color()}>
-              <span class={classList("TagLabel-text", textContrastClass(tag.color()))}>
-                <i class={'TagLabel-icon ' + tag.data.attributes.icon }></i>
-                <span class="TagLabel-name">{tag.data.attributes.name}</span>
+    if (parentTagFound) {
+      if (childTagFound == null) {
+        childTagFound = parentTagFound;
+      }
+      let footerColor = discussionDesignOption.isPrimaryTagBackgroundColorRequired ? parentTagFound.color(): discussionDesignOption.primaryBackgroundColor;
+      if (discussionDesignOption.isPrimaryTagAnButton) {
+        let footerClassName = 'DiscussionListItem-footer';
+        switch(discussionDesign) {
+          case 'StickyNoteTab':
+          case 'StickyNoteOutlineTab':
+          case 'BasicTab':
+          case 'BasicOutlineTab':
+          case 'FlatTab':
+          case 'FlatBorderTab':
+            footerClassName = 'DiscussionListItem--tabfooter';
+            break;
+        }
+        discussionListItemContent.children.push(
+          <span class={footerClassName}>
+            <span class="PrimaryTagLabel" style={'background:' + footerColor}>
+              <span class={classList("PrimaryTagLabel-text", textContrastClass(footerColor))}>
+                <i class={'PrimaryTagLabel-icon ' + parentTagFound.data.attributes.icon + " fa-1x"}></i>
+                <span class="PrimaryTagLabel-name">{parentTagFound.data.attributes.name}</span>
               </span>
-            </span>
-          );
-        } else {
-          parentTagFound = tag;
-        }
-      };
-
-      if (parentTagFound) {
-        if (childTagFound == null) {
-          childTagFound = parentTagFound;
-        }
-        let footerColor = discussionDesignOption.isPrimaryTagBackgroundColorRequired ? parentTagFound.color(): discussionDesignOption.primaryBackgroundColor;
-        if (discussionDesignOption.isPrimaryTagAnButton) {
-          let footerClassName = 'DiscussionListItem-footer';
-          switch(discussionDesign) {
-            case 'StickyNoteTab':
-            case 'StickyNoteOutlineTab':
-            case 'BasicTab':
-            case 'BasicOutlineTab':
-            case 'FlatTab':
-            case 'FlatBorderTab':
-              footerClassName = 'DiscussionListItem--tabfooter';
-              break;
-          }
-          discussionListItemContent.children.push(
-            <span class={footerClassName}>
-              <span class="PrimaryTagLabel" style={'background:' + footerColor}>
-                <span class={classList("PrimaryTagLabel-text", textContrastClass(footerColor))}>
-                  <i class={'PrimaryTagLabel-icon ' + parentTagFound.data.attributes.icon + " fa-1x"}></i>
-                  <span class="PrimaryTagLabel-name">{parentTagFound.data.attributes.name}</span>
-                </span>
-              </span>{secondaryTags}
-            </span>
-          );
-        } else {
-          discussionListItemContent.children.push(
-            <span class={classList('DiscussionListItem-footer', textContrastClass(footerColor))} style={'background:' + footerColor }>
-              <span class='DiscussionListItem--primary'>
-                <i aria-hidden="true" class={'TagLabel-icon ' + parentTagFound.data.attributes.icon + " fa-1x"}></i>{parentTagFound.data.attributes.name}
-              </span>{secondaryTags}
-            </span>
-          );
-        }
+            </span>{secondaryTags}
+          </span>
+        );
+      } else {
+        discussionListItemContent.children.push(
+          <span class={classList('DiscussionListItem-footer', textContrastClass(footerColor))} style={'background:' + footerColor }>
+            <span class='DiscussionListItem--primary'>
+              <i aria-hidden="true" class={'TagLabel-icon ' + parentTagFound.data.attributes.icon + " fa-1x"}></i>{parentTagFound.data.attributes.name}
+            </span>{secondaryTags}
+          </span>
+        );
       }
     }
+    
     let backgroundColor = discussionDesignOption.outlineBackgroundColor;
     if (childTagFound) {
       backgroundColor = childTagFound.color();
@@ -445,30 +465,18 @@ app.initializers.add('yippy-tag-with-themes', () => {
   });
 
   override(DiscussionListItem.prototype, 'mainView', function () {
+    initialiseThemeBuilder(this.attrs.discussion.tags(), app);
+
     const discussion = this.attrs.discussion;
     const jumpTo = this.getJumpTo();
-
-    let discussionDesign = app.forum.attribute('yippy-tag-with-themes.designDefault');
-    let discussionDesignOption = designOptions[discussionDesign];
 
     let textContrastColor = textContrastClass(discussionDesignOption.childBackgroundColor);
     // Override text color depending if isChildTagBackgroundColorRequired
     if (discussionDesignOption.isChildTagBackgroundColorRequired) {
-      if (this.attrs.discussion.tags() && this.attrs.discussion.tags().length > 0) {
-        let childTagFound = null;
-        let parentTagFound = null;
-        for (const tag of this.attrs.discussion.tags()) {
-          if (tag.data.attributes.isChild) {
-            childTagFound = tag;
-          } else if (tag.data.attributes.position >= 0) {
-            parentTagFound = tag;
-          }
-        }
-        if (childTagFound) {
-          textContrastColor = textContrastClass(childTagFound.color());
-        } else if (parentTagFound) {
-          textContrastColor = textContrastClass(parentTagFound.color());
-        }
+      if (childTagFound) {
+        textContrastColor = textContrastClass(childTagFound.color());
+      } else if (parentTagFound) {
+        textContrastColor = textContrastClass(parentTagFound.color());
       }
     }
     return (
