@@ -17,7 +17,7 @@ const designOptions = {
     isOutlineTagBackgroundColorRequired: false,
     outlineBackgroundColor: '#595a58',
     unreadColor: '#2199fc',
-    isTopCornerFolded: true,
+    unreadCSS: 'folded',
   },
   "StickyNoteTag": {
     isPrimaryTagBackgroundColorRequired: true,
@@ -28,7 +28,7 @@ const designOptions = {
     isOutlineTagBackgroundColorRequired: false,
     outlineBackgroundColor: '#595a58',
     unreadColor: '#2199fc',
-    isTopCornerFolded: true,
+    unreadCSS: 'folded',
   },
   "StickyNoteTab": {
     isPrimaryTagBackgroundColorRequired: true,
@@ -39,7 +39,7 @@ const designOptions = {
     isOutlineTagBackgroundColorRequired: false,
     outlineBackgroundColor: '#595a58',
     unreadColor: '#2199fc',
-    isTopCornerFolded: true,
+    unreadCSS: 'folded',
   },
   "StickyNoteBanner": {
     isPrimaryTagBackgroundColorRequired: true,
@@ -50,7 +50,7 @@ const designOptions = {
     isOutlineTagBackgroundColorRequired: false,
     outlineBackgroundColor: '#595a58',
     unreadColor: '#2199fc',
-    isTopCornerFolded: true,
+    unreadCSS: 'folded',
   },
   "StickyNoteOutline": {
     isPrimaryTagBackgroundColorRequired: false,
@@ -61,7 +61,7 @@ const designOptions = {
     isOutlineTagBackgroundColorRequired: true,
     outlineBackgroundColor: '#595a58',
     unreadColor: '#2199fc',
-    isTopCornerFolded: true,
+    unreadCSS: 'folded',
   },
   "StickyNoteOutlineTag": {
     isPrimaryTagBackgroundColorRequired: true,
@@ -72,7 +72,7 @@ const designOptions = {
     isOutlineTagBackgroundColorRequired: true,
     outlineBackgroundColor: '#595a58',
     unreadColor: '#2199fc',
-    isTopCornerFolded: true,
+    unreadCSS: 'folded',
   },
   "StickyNoteOutlineTab": {
     isPrimaryTagBackgroundColorRequired: true,
@@ -83,7 +83,7 @@ const designOptions = {
     isOutlineTagBackgroundColorRequired: true,
     outlineBackgroundColor: '#595a58',
     unreadColor: '#2199fc',
-    isTopCornerFolded: true,
+    unreadCSS: 'folded',
   },
   "StickyNoteOutlineBanner": {
     isPrimaryTagBackgroundColorRequired: true,
@@ -94,7 +94,7 @@ const designOptions = {
     isOutlineTagBackgroundColorRequired: true,
     outlineBackgroundColor: '#595a58',
     unreadColor: '#2199fc',
-    isTopCornerFolded: true,
+    unreadCSS: 'folded',
   },
   "Basic": {
     isPrimaryTagBackgroundColorRequired: false,
@@ -105,7 +105,7 @@ const designOptions = {
     isOutlineTagBackgroundColorRequired: false,
     outlineBackgroundColor: '#595a58',
     unreadColor: '#2199fc',
-    isTopCornerFolded: false,
+    unreadCSS: 'circle',
   },
   "BasicTag": {
     isPrimaryTagBackgroundColorRequired: true,
@@ -116,7 +116,7 @@ const designOptions = {
     isOutlineTagBackgroundColorRequired: false,
     outlineBackgroundColor: '#595a58',
     unreadColor: '#2199fc',
-    isTopCornerFolded: false,
+    unreadCSS: 'circle',
   },
   "BasicTab": {
     isPrimaryTagBackgroundColorRequired: true,
@@ -127,7 +127,7 @@ const designOptions = {
     isOutlineTagBackgroundColorRequired: false,
     outlineBackgroundColor: '#595a58',
     unreadColor: '#2199fc',
-    isTopCornerFolded: false,
+    unreadCSS: 'circle',
   },
   "BasicBanner": {
     isPrimaryTagBackgroundColorRequired: true,
@@ -138,7 +138,7 @@ const designOptions = {
     isOutlineTagBackgroundColorRequired: false,
     outlineBackgroundColor: '#595a58',
     unreadColor: '#2199fc',
-    isTopCornerFolded: false,
+    unreadCSS: 'circle',
   },
   "BasicOutline": {
     isPrimaryTagBackgroundColorRequired: false,
@@ -149,7 +149,7 @@ const designOptions = {
     isOutlineTagBackgroundColorRequired: true,
     outlineBackgroundColor: '#595a58',
     unreadColor: '#2199fc',
-    isTopCornerFolded: false,
+    unreadCSS: 'circle',
   },
   "BasicOutlineTag": {
     isPrimaryTagBackgroundColorRequired: true,
@@ -160,7 +160,7 @@ const designOptions = {
     isOutlineTagBackgroundColorRequired: true,
     outlineBackgroundColor: '#595a58',
     unreadColor: '#2199fc',
-    isTopCornerFolded: false,
+    unreadCSS: 'circle',
   },
   "BasicOutlineTab": {
     isPrimaryTagBackgroundColorRequired: true,
@@ -171,7 +171,7 @@ const designOptions = {
     isOutlineTagBackgroundColorRequired: true,
     outlineBackgroundColor: '#595a58',
     unreadColor: '#2199fc',
-    isTopCornerFolded: false,
+    unreadCSS: 'circle',
   },
   "BasicOutlineBanner": {
     isPrimaryTagBackgroundColorRequired: true,
@@ -182,7 +182,7 @@ const designOptions = {
     isOutlineTagBackgroundColorRequired: true,
     outlineBackgroundColor: '#595a58',
     unreadColor: '#2199fc',
-    isTopCornerFolded: false,
+    unreadCSS: 'circle',
   },
   "Flat": {
     isPrimaryTagBackgroundColorRequired: false,
@@ -193,7 +193,7 @@ const designOptions = {
     isOutlineTagBackgroundColorRequired: false,
     outlineBackgroundColor: '#595a58',
     unreadColor: '#2199fc',
-    isTopCornerFolded: false,
+    unreadCSS: 'square',
   },
   "FlatTag": {
     isPrimaryTagBackgroundColorRequired: true,
@@ -204,7 +204,7 @@ const designOptions = {
     isOutlineTagBackgroundColorRequired: false,
     outlineBackgroundColor: '#595a58',
     unreadColor: '#2199fc',
-    isTopCornerFolded: false,
+    unreadCSS: 'square',
   },
   "FlatTab": {
     isPrimaryTagBackgroundColorRequired: true,
@@ -215,7 +215,7 @@ const designOptions = {
     isOutlineTagBackgroundColorRequired: false,
     outlineBackgroundColor: '#595a58',
     unreadColor: '#2199fc',
-    isTopCornerFolded: false,
+    unreadCSS: 'square',
   },
   "FlatBanner": {
     isPrimaryTagBackgroundColorRequired: true,
@@ -226,7 +226,7 @@ const designOptions = {
     isOutlineTagBackgroundColorRequired: false,
     outlineBackgroundColor: '#595a58',
     unreadColor: '#2199fc',
-    isTopCornerFolded: false,
+    unreadCSS: 'square',
   },
   "FlatBorder": {
     isPrimaryTagBackgroundColorRequired: false,
@@ -237,7 +237,7 @@ const designOptions = {
     isOutlineTagBackgroundColorRequired: true,
     outlineBackgroundColor: '#595a58',
     unreadColor: '#2199fc',
-    isTopCornerFolded: false,
+    unreadCSS: 'square',
   },
   "FlatBorderTag": {
     isPrimaryTagBackgroundColorRequired: true,
@@ -248,7 +248,7 @@ const designOptions = {
     isOutlineTagBackgroundColorRequired: true,
     outlineBackgroundColor: '#595a58',
     unreadColor: '#2199fc',
-    isTopCornerFolded: false,
+    unreadCSS: 'square',
   },
   "FlatBorderTab": {
     isPrimaryTagBackgroundColorRequired: true,
@@ -259,7 +259,7 @@ const designOptions = {
     isOutlineTagBackgroundColorRequired: true,
     outlineBackgroundColor: '#595a58',
     unreadColor: '#2199fc',
-    isTopCornerFolded: false,
+    unreadCSS: 'square',
   },
   "FlatBorderBanner": {
     isPrimaryTagBackgroundColorRequired: true,
@@ -270,7 +270,7 @@ const designOptions = {
     isOutlineTagBackgroundColorRequired: true,
     outlineBackgroundColor: '#595a58',
     unreadColor: '#2199fc',
-    isTopCornerFolded: false,
+    unreadCSS: 'square',
   }
 };
 
@@ -312,9 +312,17 @@ function initialiseThemeBuilder (discussionTags, app) {
   discussionDesign = app.forum.attribute('yippy-tag-with-themes.designDefault');
   const discussionDesignByTags = app.forum.attribute('yippy-tag-with-themes.designByTags');
   let mergeOptions = null;
+  let findIds = [];
   if (parentTagFound) {
+    findIds.push(parentTagFound.id());
+  }
+
+  if (childTagFound) {
+    findIds.push(childTagFound.id());
+  }
+  if (findIds.length > 0) {
     for (const customisedDesign of discussionDesignByTags) {
-      if(customisedDesign.isEnabled && customisedDesign.tags.includes( parentTagFound.id() )){
+      if(customisedDesign.isEnabled && customisedDesign.tags.includes( findIds )){
         discussionDesign = customisedDesign.themeName;
         mergeOptions = {primaryBackgroundColor: customisedDesign.primaryBackgroundColor, childBackgroundColor: customisedDesign.childBackgroundColor, outlineBackgroundColor: customisedDesign.outlineBackgroundColor, unreadColor: customisedDesign.unreadColor}
         break;
@@ -439,26 +447,22 @@ app.initializers.add('yippy-tag-with-themes', () => {
         }
         break;
     }
-    const foldedClassname = discussionDesignOption.isTopCornerFolded? 'folded': '';
+    const foldedClassname = discussionDesignOption.unreadCSS;
     if (childTagFound) {
       vnode.attrs.style = {'background': (discussionDesignOption.isChildTagBackgroundColorRequired? childTagFound.color(): discussionDesignOption.childBackgroundColor), ...(vnode.attrs.style || {}) };
     } else {
       vnode.attrs.style = {'background': discussionDesignOption.childBackgroundColor, ...(vnode.attrs.style || {}) };
     }
-    if (discussionDesignOption.isTopCornerFolded) {
+    if (this.attrs.discussion.isUnread()) {
+      discussionListItemContent.children.push(<span class={'DiscussionListItem--unreadoutline'+foldedClassname} style={'background:' +discussionDesignOption.unreadColor+ '; color:' +discussionDesignOption.unreadColor}></span>);
+    }
+    if (foldedClassname == 'folded') {
       if (childTagFound) {
         vnode.attrs.style = {'background': (discussionDesignOption.isChildTagBackgroundColorRequired? childTagFound.color(): discussionDesignOption.childBackgroundColor), ...(vnode.attrs.style || {}) };
 
         discussionListItemContent.children.push(<span class={'DiscussionListItem--read'+foldedClassname} style={'border-color:' + (discussionDesignOption.isOutlineTagBackgroundColorRequired ? childTagFound.color() : discussionDesignOption.outlineBackgroundColor)}></span>);
       } else {
         discussionListItemContent.children.push(<span class={'DiscussionListItem--read'+foldedClassname} style={'border-color:' + discussionDesignOption.outlineBackgroundColor}></span>);
-      }
-      if (this.attrs.discussion.isUnread()) {
-        discussionListItemContent.children.push(<span class={'DiscussionListItem--unread'+foldedClassname} style={'border-color:' +discussionDesignOption.unreadColor}></span>);
-      }
-    } else {
-      if (this.attrs.discussion.isUnread()) {
-        discussionListItemContent.children.push(<span class={'DiscussionListItem--unread'+foldedClassname} style={'background:' +discussionDesignOption.unreadColor}></span>);
       }
     }
     vnode.attrs.className += ' ' + discussionDesign;

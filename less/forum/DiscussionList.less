@@ -377,31 +377,43 @@
       right: 10px;
       font-size: 12px;
     }
-    &--unread {
-      width: 30px;
-      height: 25px;
+    
+    &--unreadoutlinecircle {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      width: 20px;
+      height: 20px;
       border-radius: 50%;
     }
-    &--unreadfolded {
+    &--unreadoutlinesquare {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      width: 20px;
+      height: 20px;
+    }
+    &--unreadoutlinefolded {
       content: "";
       position: absolute;
       top: -1px;
       right: 1px;
       width: 35px;
       height: 35px;
-      border-radius: 5px;
+      border-radius: 0 0 0 5px;
       border-width: @border-fold-width;
       border-style: solid;
+      z-index: 1;
     }
-    &--unreadfolded::after {
+    &--unreadoutlinefolded::after {
       content: "";
       position: absolute;
       top: -1px;
       right: -36px;
       width: 37px;
       height: 37px;
-      border-radius: 0 0 0 5px;
-      border-width: @border-fold-width;
+      border-radius: 5px;
+      border-width: 0 35px 35px 0;
       border-style: solid;
       border-color: transparent @body-bg
     }
