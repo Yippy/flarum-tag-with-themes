@@ -10,7 +10,7 @@ This extension requires PHP 7.4 or higher.
 
     `composer require yippy/flarum-tag-with-themes`
 
-Must load images example
+Must include select2 to be able to use the dropdown menu
 
     `php flarum assets:publish`
 
@@ -38,6 +38,9 @@ Sticky Note Outline
 ### Customisation
 Switch between Design themes depending on selected Primary Tag, this help make dicussion with a specific tag to stand out more.
 ![Customising design by tags](/assets/images/customising_design_by_tags_example.png)
+
+Override Font
+![Customising design by tags fot](/assets/images/customising_design_by_tags_font_example.png)
 
 ## Support
 

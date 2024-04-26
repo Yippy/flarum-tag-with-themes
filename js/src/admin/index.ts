@@ -7,8 +7,11 @@ interface TagDesign {
     themeName: string,
     tags: number[],
     primaryBackgroundColor: string,
+    primaryFontClass: string,
     childBackgroundColor: string,
+    childFontClass: string,
     outlineBackgroundColor: string,
+    secondaryFontClass: string,
     unreadColor: string,
     isEnabled: boolean
 }
@@ -17,6 +20,38 @@ const translationPrefix = 'yippy-tag-with-themes.admin.';
 const tagDesignSettingKey = settingsPrefix+'.design-by-tags';
 
 app.initializers.add(settingsPrefix, (app) => {
+    const fontClassChoiceAvailable = [
+        {
+            id: 'Automatic',
+            text: 'Automatic',
+            class: null,
+            color: '#e4e9f1',
+        },
+        {
+            id: 'White',
+            text: 'White Color',
+            class: 'text-contrast--light',
+            color: '#3d4c4c',
+        },
+        {
+            id: 'WhiteWithBorder',
+            text: 'White Color with Black Border',
+            class: 'outlinetextblackborder',
+            color: '#3d4c4c',
+        },
+        {
+            id: 'Black',
+            text: 'Black Color',
+            class: 'text-contrast--dark',
+            color: '#99bfbe',
+        },
+        {
+            id: 'BlackWithBorder',
+            text: 'Black Color with White Border',
+            class: 'outlinetextwhiteborder',
+            color: '#99bfbe',
+        },
+    ];
     const designThemeAvailable = [
         {
             id: 'StickyNote',
@@ -95,7 +130,7 @@ app.initializers.add(settingsPrefix, (app) => {
     function formatState (state) {
         if (!state.id) { return state.text; }
         var $state = $(
-         '<span class="'+ textContrastClass(state.color)+'" style="background: '+state.color+'; padding-top: 2px; padding-right: 5px; padding-bottom: 2px; padding-left: 5px;"><i class="'+ state.icon +'"></i><span> '+ state.text +'</span></span>'
+         '<span class="'+ (state.class ? state.class : textContrastClass(state.color))+'" style="background: '+state.color+'; padding-top: 2px; padding-right: 5px; padding-bottom: 2px; padding-left: 5px;"><i class="'+ state.icon +'"></i><span> '+ state.text +'</span></span>'
         );
         return $state;
     }
@@ -217,6 +252,25 @@ app.initializers.add(settingsPrefix, (app) => {
                           })),
                         ]),
                         m('tr', [
+                          m('td', app.translator.trans(translationPrefix + 'designs.data.primary_font_class')),
+                          m('td',
+                            m('select', {
+                              oncreate: ({dom}) => $(dom).select2({ width: '100%', multiple: false, data: fontClassChoiceAvailable, templateResult: formatState, templateSelection: formatState}).on("change", function() {
+                                this.dispatchEvent(new CustomEvent('edit', {"detail": $(this).val()}));
+                              }).on('select2:select', function(e){
+                                var id = e.params.data.id;
+                                var option = $(e.target).children('[value='+id+']');
+                                option.detach();
+                                $(e.target).append(option).change();
+                              }).val(rule.primaryFontClass).trigger("change"),
+                              onedit: (event: InputEvent) => {
+                                rule.primaryFontClass = event.detail;
+                                this.setting(tagDesignSettingKey)(JSON.stringify(tagDesigns));
+                              }
+                            })
+                          )
+                        ]),
+                        m('tr', [
                           m('td', app.translator.trans(translationPrefix + 'designs.data.child_background_color')),
                           m('td', m('input.FormControl', {
                             type: 'color',
@@ -227,6 +281,25 @@ app.initializers.add(settingsPrefix, (app) => {
                                 this.setting(tagDesignSettingKey)(JSON.stringify(tagDesigns));
                             },
                           })),
+                        ]),
+                        m('tr', [
+                          m('td', app.translator.trans(translationPrefix + 'designs.data.child_font_class')),
+                          m('td',
+                            m('select', {
+                              oncreate: ({dom}) => $(dom).select2({ width: '100%', multiple: false, data: fontClassChoiceAvailable, templateResult: formatState, templateSelection: formatState}).on("change", function() {
+                                this.dispatchEvent(new CustomEvent('edit', {"detail": $(this).val()}));
+                              }).on('select2:select', function(e){
+                                var id = e.params.data.id;
+                                var option = $(e.target).children('[value='+id+']');
+                                option.detach();
+                                $(e.target).append(option).change();
+                              }).val(rule.childFontClass).trigger("change"),
+                              onedit: (event: InputEvent) => {
+                                rule.childFontClass = event.detail;
+                                this.setting(tagDesignSettingKey)(JSON.stringify(tagDesigns));
+                              }
+                            })
+                          )
                         ]),
                         m('tr', [
                           m('td', app.translator.trans(translationPrefix + 'designs.data.outline_background_color')),
@@ -253,6 +326,25 @@ app.initializers.add(settingsPrefix, (app) => {
                           })),
                         ]),
                         m('tr', [
+                          m('td', app.translator.trans(translationPrefix + 'designs.data.secondary_font_class')),
+                          m('td',
+                            m('select', {
+                              oncreate: ({dom}) => $(dom).select2({ width: '100%', multiple: false, data: fontClassChoiceAvailable, templateResult: formatState, templateSelection: formatState}).on("change", function() {
+                                this.dispatchEvent(new CustomEvent('edit', {"detail": $(this).val()}));
+                              }).on('select2:select', function(e){
+                                var id = e.params.data.id;
+                                var option = $(e.target).children('[value='+id+']');
+                                option.detach();
+                                $(e.target).append(option).change();
+                              }).val(rule.secondaryFontClass).trigger("change"),
+                              onedit: (event: InputEvent) => {
+                                rule.secondaryFontClass = event.detail;
+                                this.setting(tagDesignSettingKey)(JSON.stringify(tagDesigns));
+                              }
+                            })
+                          )
+                        ]),
+                        m('tr', [
                           m('td', app.translator.trans(translationPrefix + 'designs.data.is_enabled')),
                           m('td', m('input', {
                             type: 'checkbox',
@@ -274,9 +366,12 @@ app.initializers.add(settingsPrefix, (app) => {
                       themeName: '',
                       tags: [],
                       primaryBackgroundColor: '#e8ecf3',
+                      primaryFontClass: 'Automatic',
                       childBackgroundColor: '#e8ecf3',
+                      childFontClass: 'Automatic',
                       outlineBackgroundColor: '#595a58',
                       unreadColor: '#2199fc',
+                      secondaryFontClass: 'Automatic',
                       isEnabled: true
                     });
   

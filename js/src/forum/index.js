@@ -6,271 +6,350 @@ import classList from 'flarum/common/utils/classList';
 import Link from 'flarum/common/components/Link';
 import highlight from 'flarum/common/helpers/highlight';
 import listItems from 'flarum/common/helpers/listItems';
+const fontClasses = {
+  'Automatic': null,
+  'White': 'text-contrast--light',
+  'WhiteWithBorder': 'outlinetextblackborder',
+  'Black': 'text-contrast--dark',
+  'BlackWithBorder': 'outlinetextwhiteborder',
+};
 
 const designOptions = {
   "StickyNote": {
     isPrimaryTagBackgroundColorRequired: false,
     isPrimaryTagAnButton: false,
     primaryBackgroundColor: '#e8ecf3',
+    primaryFontClass: null,
     isChildTagBackgroundColorRequired: true,
     childBackgroundColor: '#e8ecf3',
+    childFontClass: null,
     isOutlineTagBackgroundColorRequired: false,
     outlineBackgroundColor: '#595a58',
     unreadColor: '#2199fc',
     unreadCSS: 'folded',
+    secondaryFontClass: null,
   },
   "StickyNoteTag": {
     isPrimaryTagBackgroundColorRequired: true,
     isPrimaryTagAnButton: true,
     primaryBackgroundColor: '#e8ecf3',
+    primaryFontClass: null,
     isChildTagBackgroundColorRequired: true,
     childBackgroundColor: '#e8ecf3',
+    childFontClass: null,
     isOutlineTagBackgroundColorRequired: false,
     outlineBackgroundColor: '#595a58',
     unreadColor: '#2199fc',
     unreadCSS: 'folded',
+    secondaryFontClass: null,
   },
   "StickyNoteTab": {
     isPrimaryTagBackgroundColorRequired: true,
     isPrimaryTagAnButton: true,
     primaryBackgroundColor: '#e8ecf3',
+    primaryFontClass: null,
     isChildTagBackgroundColorRequired: true,
     childBackgroundColor: '#e8ecf3',
+    childFontClass: null,
     isOutlineTagBackgroundColorRequired: false,
     outlineBackgroundColor: '#595a58',
     unreadColor: '#2199fc',
     unreadCSS: 'folded',
+    secondaryFontClass: null,
   },
   "StickyNoteBanner": {
     isPrimaryTagBackgroundColorRequired: true,
     isPrimaryTagAnButton: false,
     primaryBackgroundColor: '#e8ecf3',
+    primaryFontClass: null,
     isChildTagBackgroundColorRequired: true,
     childBackgroundColor: '#e8ecf3',
+    childFontClass: null,
     isOutlineTagBackgroundColorRequired: false,
     outlineBackgroundColor: '#595a58',
     unreadColor: '#2199fc',
     unreadCSS: 'folded',
+    secondaryFontClass: null,
   },
   "StickyNoteOutline": {
     isPrimaryTagBackgroundColorRequired: false,
     isPrimaryTagAnButton: false,
     primaryBackgroundColor: 'transparent',
+    primaryFontClass: null,
     isChildTagBackgroundColorRequired: false,
     childBackgroundColor: '#e8ecf3',
+    childFontClass: null,
     isOutlineTagBackgroundColorRequired: true,
     outlineBackgroundColor: '#595a58',
     unreadColor: '#2199fc',
     unreadCSS: 'folded',
+    secondaryFontClass: null,
   },
   "StickyNoteOutlineTag": {
     isPrimaryTagBackgroundColorRequired: true,
     isPrimaryTagAnButton: true,
     primaryBackgroundColor: '#e8ecf3',
+    primaryFontClass: null,
     isChildTagBackgroundColorRequired: false,
     childBackgroundColor: '#e8ecf3',
+    childFontClass: null,
     isOutlineTagBackgroundColorRequired: true,
     outlineBackgroundColor: '#595a58',
     unreadColor: '#2199fc',
     unreadCSS: 'folded',
+    secondaryFontClass: null,
   },
   "StickyNoteOutlineTab": {
     isPrimaryTagBackgroundColorRequired: true,
     isPrimaryTagAnButton: true,
     primaryBackgroundColor: '#e8ecf3',
+    primaryFontClass: null,
     isChildTagBackgroundColorRequired: false,
     childBackgroundColor: '#e8ecf3',
+    childFontClass: null,
     isOutlineTagBackgroundColorRequired: true,
     outlineBackgroundColor: '#595a58',
     unreadColor: '#2199fc',
     unreadCSS: 'folded',
+    secondaryFontClass: null,
   },
   "StickyNoteOutlineBanner": {
     isPrimaryTagBackgroundColorRequired: true,
     isPrimaryTagAnButton: false,
     primaryBackgroundColor: '#e8ecf3',
+    primaryFontClass: null,
     isChildTagBackgroundColorRequired: false,
     childBackgroundColor: '#e8ecf3',
+    childFontClass: null,
     isOutlineTagBackgroundColorRequired: true,
     outlineBackgroundColor: '#595a58',
     unreadColor: '#2199fc',
     unreadCSS: 'folded',
+    secondaryFontClass: null,
   },
   "Basic": {
     isPrimaryTagBackgroundColorRequired: false,
     isPrimaryTagAnButton: false,
     primaryBackgroundColor: '#e8ecf3',
+    primaryFontClass: null,
     isChildTagBackgroundColorRequired: true,
     childBackgroundColor: '#e8ecf3',
+    childFontClass: null,
     isOutlineTagBackgroundColorRequired: false,
     outlineBackgroundColor: '#595a58',
     unreadColor: '#2199fc',
     unreadCSS: 'circle',
+    secondaryFontClass: null,
   },
   "BasicTag": {
     isPrimaryTagBackgroundColorRequired: true,
     isPrimaryTagAnButton: true,
     primaryBackgroundColor: '#e8ecf3',
+    primaryFontClass: null,
     isChildTagBackgroundColorRequired: true,
     childBackgroundColor: '#e8ecf3',
+    childFontClass: null,
     isOutlineTagBackgroundColorRequired: false,
     outlineBackgroundColor: '#595a58',
     unreadColor: '#2199fc',
     unreadCSS: 'circle',
+    secondaryFontClass: null,
   },
   "BasicTab": {
     isPrimaryTagBackgroundColorRequired: true,
     isPrimaryTagAnButton: true,
     primaryBackgroundColor: '#e8ecf3',
+    primaryFontClass: null,
     isChildTagBackgroundColorRequired: true,
     childBackgroundColor: '#e8ecf3',
+    childFontClass: null,
     isOutlineTagBackgroundColorRequired: false,
     outlineBackgroundColor: '#595a58',
     unreadColor: '#2199fc',
     unreadCSS: 'circle',
+    secondaryFontClass: null,
   },
   "BasicBanner": {
     isPrimaryTagBackgroundColorRequired: true,
     isPrimaryTagAnButton: false,
     primaryBackgroundColor: '#e8ecf3',
+    primaryFontClass: null,
     isChildTagBackgroundColorRequired: true,
     childBackgroundColor: '#e8ecf3',
+    childFontClass: null,
     isOutlineTagBackgroundColorRequired: false,
     outlineBackgroundColor: '#595a58',
     unreadColor: '#2199fc',
     unreadCSS: 'circle',
+    secondaryFontClass: null,
   },
   "BasicOutline": {
     isPrimaryTagBackgroundColorRequired: false,
     isPrimaryTagAnButton: false,
     primaryBackgroundColor: 'transparent',
+    primaryFontClass: null,
     isChildTagBackgroundColorRequired: false,
     childBackgroundColor: '#e8ecf3',
+    childFontClass: null,
     isOutlineTagBackgroundColorRequired: true,
     outlineBackgroundColor: '#595a58',
     unreadColor: '#2199fc',
     unreadCSS: 'circle',
+    secondaryFontClass: null,
   },
   "BasicOutlineTag": {
     isPrimaryTagBackgroundColorRequired: true,
     isPrimaryTagAnButton: true,
     primaryBackgroundColor: '#e8ecf3',
+    primaryFontClass: null,
     isChildTagBackgroundColorRequired: false,
     childBackgroundColor: '#e8ecf3',
+    childFontClass: null,
     isOutlineTagBackgroundColorRequired: true,
     outlineBackgroundColor: '#595a58',
     unreadColor: '#2199fc',
     unreadCSS: 'circle',
+    secondaryFontClass: null,
   },
   "BasicOutlineTab": {
     isPrimaryTagBackgroundColorRequired: true,
     isPrimaryTagAnButton: true,
     primaryBackgroundColor: '#e8ecf3',
+    primaryFontClass: null,
     isChildTagBackgroundColorRequired: false,
     childBackgroundColor: '#e8ecf3',
+    childFontClass: null,
     isOutlineTagBackgroundColorRequired: true,
     outlineBackgroundColor: '#595a58',
     unreadColor: '#2199fc',
     unreadCSS: 'circle',
+    secondaryFontClass: null,
   },
   "BasicOutlineBanner": {
     isPrimaryTagBackgroundColorRequired: true,
     isPrimaryTagAnButton: false,
     primaryBackgroundColor: '#e8ecf3',
+    primaryFontClass: null,
     isChildTagBackgroundColorRequired: false,
     childBackgroundColor: '#e8ecf3',
+    childFontClass: null,
     isOutlineTagBackgroundColorRequired: true,
     outlineBackgroundColor: '#595a58',
     unreadColor: '#2199fc',
     unreadCSS: 'circle',
+    secondaryFontClass: null,
   },
   "Flat": {
     isPrimaryTagBackgroundColorRequired: false,
     isPrimaryTagAnButton: false,
     primaryBackgroundColor: '#e8ecf3',
+    primaryFontClass: null,
     isChildTagBackgroundColorRequired: true,
     childBackgroundColor: '#e8ecf3',
+    childFontClass: null,
     isOutlineTagBackgroundColorRequired: false,
     outlineBackgroundColor: '#595a58',
     unreadColor: '#2199fc',
     unreadCSS: 'square',
+    secondaryFontClass: null,
   },
   "FlatTag": {
     isPrimaryTagBackgroundColorRequired: true,
     isPrimaryTagAnButton: true,
     primaryBackgroundColor: '#e8ecf3',
+    primaryFontClass: null,
     isChildTagBackgroundColorRequired: true,
     childBackgroundColor: '#e8ecf3',
+    childFontClass: null,
     isOutlineTagBackgroundColorRequired: false,
     outlineBackgroundColor: '#595a58',
     unreadColor: '#2199fc',
     unreadCSS: 'square',
+    secondaryFontClass: null,
   },
   "FlatTab": {
     isPrimaryTagBackgroundColorRequired: true,
     isPrimaryTagAnButton: true,
     primaryBackgroundColor: '#e8ecf3',
+    primaryFontClass: null,
     isChildTagBackgroundColorRequired: true,
     childBackgroundColor: '#e8ecf3',
+    childFontClass: null,
     isOutlineTagBackgroundColorRequired: false,
     outlineBackgroundColor: '#595a58',
     unreadColor: '#2199fc',
     unreadCSS: 'square',
+    secondaryFontClass: null,
   },
   "FlatBanner": {
     isPrimaryTagBackgroundColorRequired: true,
     isPrimaryTagAnButton: false,
     primaryBackgroundColor: '#e8ecf3',
+    primaryFontClass: null,
     isChildTagBackgroundColorRequired: true,
     childBackgroundColor: '#e8ecf3',
+    childFontClass: null,
     isOutlineTagBackgroundColorRequired: false,
     outlineBackgroundColor: '#595a58',
     unreadColor: '#2199fc',
     unreadCSS: 'square',
+    secondaryFontClass: null,
   },
   "FlatBorder": {
     isPrimaryTagBackgroundColorRequired: false,
     isPrimaryTagAnButton: false,
     primaryBackgroundColor: 'transparent',
+    primaryFontClass: null,
     isChildTagBackgroundColorRequired: false,
     childBackgroundColor: '#e8ecf3',
+    childFontClass: null,
     isOutlineTagBackgroundColorRequired: true,
     outlineBackgroundColor: '#595a58',
     unreadColor: '#2199fc',
     unreadCSS: 'square',
+    secondaryFontClass: null,
   },
   "FlatBorderTag": {
     isPrimaryTagBackgroundColorRequired: true,
     isPrimaryTagAnButton: true,
     primaryBackgroundColor: '#e8ecf3',
+    primaryFontClass: null,
     isChildTagBackgroundColorRequired: false,
     childBackgroundColor: '#e8ecf3',
+    childFontClass: null,
     isOutlineTagBackgroundColorRequired: true,
     outlineBackgroundColor: '#595a58',
     unreadColor: '#2199fc',
     unreadCSS: 'square',
+    secondaryFontClass: null,
   },
   "FlatBorderTab": {
     isPrimaryTagBackgroundColorRequired: true,
     isPrimaryTagAnButton: true,
     primaryBackgroundColor: '#e8ecf3',
+    primaryFontClass: null,
     isChildTagBackgroundColorRequired: false,
     childBackgroundColor: '#e8ecf3',
+    childFontClass: null,
     isOutlineTagBackgroundColorRequired: true,
     outlineBackgroundColor: '#595a58',
     unreadColor: '#2199fc',
     unreadCSS: 'square',
+    secondaryFontClass: null,
   },
   "FlatBorderBanner": {
     isPrimaryTagBackgroundColorRequired: true,
     isPrimaryTagAnButton: false,
     primaryBackgroundColor: '#e8ecf3',
+    primaryFontClass: null,
     isChildTagBackgroundColorRequired: false,
     childBackgroundColor: '#e8ecf3',
+    childFontClass: null,
     isOutlineTagBackgroundColorRequired: true,
     outlineBackgroundColor: '#595a58',
     unreadColor: '#2199fc',
     unreadCSS: 'square',
+    secondaryFontClass: null,
   }
 };
 
@@ -291,40 +370,33 @@ function initialiseThemeBuilder (discussionTags, app) {
     },
     children: []
   };
+  discussionDesign = app.forum.attribute('yippy-tag-with-themes.designDefault');
+  const discussionDesignByTags = app.forum.attribute('yippy-tag-with-themes.designByTags');
+  let mergeOptions = null;
   if (discussionTags && discussionTags.length > 0) {
     for (const tag of discussionTags) {
       if (tag.data.attributes.isChild) {
         childTagFound = tag;
       } else if (tag.data.attributes.position == null) {
-        secondaryTags.children.push(
-          <span class="TagLabel" style={'--tag-bg:' + tag.color()}>
-            <span class={classList("TagLabel-text", textContrastClass(tag.color()))}>
-              <i class={'TagLabel-icon ' + tag.data.attributes.icon }></i>
-              <span class="TagLabel-name">{tag.data.attributes.name}</span>
-            </span>
-          </span>
-        );
       } else {
         parentTagFound = tag;
       }
     };
   }
-  discussionDesign = app.forum.attribute('yippy-tag-with-themes.designDefault');
-  const discussionDesignByTags = app.forum.attribute('yippy-tag-with-themes.designByTags');
-  let mergeOptions = null;
-  let findIds = [];
-  if (parentTagFound) {
-    findIds.push(parentTagFound.id());
-  }
 
-  if (childTagFound) {
-    findIds.push(childTagFound.id());
-  }
-  if (findIds.length > 0) {
+  if (parentTagFound) {
     for (const customisedDesign of discussionDesignByTags) {
-      if(customisedDesign.isEnabled && customisedDesign.tags.includes( findIds )){
+      if(customisedDesign.isEnabled && customisedDesign.tags.includes( parentTagFound.id() )){
         discussionDesign = customisedDesign.themeName;
-        mergeOptions = {primaryBackgroundColor: customisedDesign.primaryBackgroundColor, childBackgroundColor: customisedDesign.childBackgroundColor, outlineBackgroundColor: customisedDesign.outlineBackgroundColor, unreadColor: customisedDesign.unreadColor}
+        mergeOptions = {
+          primaryBackgroundColor: customisedDesign.primaryBackgroundColor,
+          primaryFontClass: fontClasses[customisedDesign.primaryFontClass],
+          childBackgroundColor: customisedDesign.childBackgroundColor,
+          childFontClass: fontClasses[customisedDesign.childFontClass],
+          outlineBackgroundColor: customisedDesign.outlineBackgroundColor,
+          unreadColor: customisedDesign.unreadColor,
+          secondaryFontClass: fontClasses[customisedDesign.secondaryFontClass],
+        }
         break;
       }
     }
@@ -332,6 +404,20 @@ function initialiseThemeBuilder (discussionTags, app) {
   discussionDesignOption = designOptions[discussionDesign];
   if (mergeOptions) {
     discussionDesignOption = Object.assign({}, discussionDesignOption, mergeOptions);
+  }
+  if (discussionTags && discussionTags.length > 0) {
+    for (const tag of discussionTags) {
+      if (tag.data.attributes.position == null) {
+        secondaryTags.children.push(
+          <span class="TagLabel" style={'--tag-bg:' + tag.color()}>
+            <span class={classList("TagLabel-text",  (discussionDesignOption.secondaryFontClass ? discussionDesignOption.secondaryFontClass: textContrastClass(tag.color())))}>
+              <i class={'TagLabel-icon ' + tag.data.attributes.icon }></i>
+              <span class="TagLabel-name">{tag.data.attributes.name}</span>
+            </span>
+          </span>
+        );
+      }
+    };
   }
 }
 
@@ -368,7 +454,7 @@ app.initializers.add('yippy-tag-with-themes', () => {
         discussionListItemContent.children.push(
           <span class={footerClassName}>
             <span class="PrimaryTagLabel" style={'background:' + footerColor}>
-              <span class={classList("PrimaryTagLabel-text", textContrastClass(footerColor))}>
+              <span class={classList("PrimaryTagLabel-text", (discussionDesignOption.primaryFontClass ? discussionDesignOption.primaryFontClass: textContrastClass(footerColor)))}>
                 <i class={'PrimaryTagLabel-icon ' + parentTagFound.data.attributes.icon + " fa-1x"}></i>
                 <span class="PrimaryTagLabel-name">{parentTagFound.data.attributes.name}</span>
               </span>
@@ -377,7 +463,7 @@ app.initializers.add('yippy-tag-with-themes', () => {
         );
       } else {
         discussionListItemContent.children.push(
-          <span class={classList('DiscussionListItem-footer', textContrastClass(footerColor))} style={'background:' + footerColor }>
+          <span class={classList('DiscussionListItem-footer', (discussionDesignOption.primaryFontClass ? discussionDesignOption.primaryFontClass: textContrastClass(footerColor)))} style={'background:' + footerColor }>
             <span class='DiscussionListItem--primary'>
               <i aria-hidden="true" class={'TagLabel-icon ' + parentTagFound.data.attributes.icon + " fa-1x"}></i>{parentTagFound.data.attributes.name}
             </span>{secondaryTags}
@@ -478,9 +564,9 @@ app.initializers.add('yippy-tag-with-themes', () => {
     // Override text color depending if isChildTagBackgroundColorRequired
     if (discussionDesignOption.isChildTagBackgroundColorRequired) {
       if (childTagFound) {
-        textContrastColor = textContrastClass(childTagFound.color());
+        textContrastColor = (discussionDesignOption.childFontClass ? discussionDesignOption.childFontClass: textContrastClass(childTagFound.color()));
       } else if (parentTagFound) {
-        textContrastColor = textContrastClass(parentTagFound.color());
+        textContrastColor = (discussionDesignOption.childFontClass ? discussionDesignOption.childFontClass: textContrastClass(parentTagFound.color()));
       }
     }
     return (
