@@ -10,9 +10,11 @@ This extension requires PHP 7.4 or higher.
 
     `composer require yippy/flarum-tag-with-themes`
 
-Must include select2 to be able to use the dropdown menu
+You must run this command for this extension to work, this is because the assets command will include select2 for the dropdown menu to work.
 
     `php flarum assets:publish`
+
+If you are unable to run that command, and the dropdown menu is still not working. You can copy the [asset manually](https://github.com/Yippy/flarum-tag-with-themes/tree/main/assets) and move it to the [FLARUM_DATA_DIRECTORY]\assets\extensions\yippy-tag-with-themes\ folder.
 
 ## Flarum Tag with Themes
 
