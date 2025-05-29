@@ -566,7 +566,6 @@ export default function () {
     const discussion = this.attrs.discussion;
     if (discussion.isTagWithThemesEnabled()) {
       initialiseThemeBuilder(discussion.tags(), app, discussion);
-      console.log(discussion);
       if (discussionDesignOption) {
         const jumpTo = this.getJumpTo();
 
