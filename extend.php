@@ -13,6 +13,8 @@ namespace Yippy\FlarumTagWithThemes;
 
 use Flarum\Extend;
 use Flarum\Frontend\Document;
+use Flarum\Api\Serializer\DiscussionSerializer;
+use Yippy\FlarumTagWithThemes\Listener\AddDiscussionAttributes;
 
 return [
     (new Extend\Frontend('forum'))
@@ -22,7 +24,8 @@ return [
     (new Extend\Frontend('admin'))
         ->js(__DIR__.'/js/dist/admin.js')
         ->css(__DIR__.'/less/admin.less'),
-
+    (new Extend\ApiSerializer(DiscussionSerializer::class))
+        ->attributes(AddDiscussionAttributes::class),
     (new Extend\Settings())
         ->serializeToForum('yippy-tag-with-themes.designDefault', 'yippy-tag-with-themes.design-default', function (?string $value): string {
             return $value ? $value : 'StickyNote';

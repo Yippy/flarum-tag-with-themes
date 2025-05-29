@@ -54,6 +54,9 @@ app.initializers.add(settingsPrefix, (app) => {
     ];
     const designThemeAvailable = [
         {
+            id: "None",
+            text: app.translator.trans(translationPrefix+'options.design_options.none'),
+        },{
             id: 'StickyNote',
             text: app.translator.trans(translationPrefix+'options.design_options.sticky_note'),
         },{
@@ -136,6 +139,16 @@ app.initializers.add(settingsPrefix, (app) => {
     }
     app.extensionData
     .for(settingsPrefix)
+      .registerPermission(
+        {
+          permission: settingsPrefix+'.display-themes',
+          icon: 'fas fa-unlock',
+          label: app.translator.trans(translationPrefix+'labels.display_themes'),
+          help: app.translator.trans(translationPrefix+'helps.display_themes'),
+          allowGuest: true,
+        },
+        'view'
+      )
       .registerSetting({
           setting: settingsPrefix+'.design-default',
           type: 'select',
