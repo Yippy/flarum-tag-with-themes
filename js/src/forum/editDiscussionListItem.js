@@ -560,13 +560,12 @@ export default function () {
     }
   });
 
-  extend(DiscussionListItem.prototype, 'mainView', function () {
+  override(DiscussionListItem.prototype, 'mainView', function () {
     const discussion = this.attrs.discussion;
+    const jumpTo = this.getJumpTo();
     if (discussion.isTagWithThemesEnabled()) {
       initialiseThemeBuilder(discussion.tags(), app);
       if (discussionDesignOption) {
-        const jumpTo = this.getJumpTo();
-
         let textContrastColor = textContrastClass(discussionDesignOption.childBackgroundColor);
         // Override text color depending if isChildTagBackgroundColorRequired
         if (discussionDesignOption.isChildTagBackgroundColorRequired) {
@@ -584,6 +583,13 @@ export default function () {
         );
       }
     }
+
+    return (
+      <Link href={app.route.discussion(discussion, jumpTo)} className="DiscussionListItem-main">
+        <h2 className="DiscussionListItem-title">{highlight(discussion.title(), this.highlightRegExp)}</h2>
+        <ul className="DiscussionListItem-info">{listItems(this.infoItems().toArray())}</ul>
+      </Link>
+    );
   });
 
   extend(DiscussionListItem.prototype, 'infoItems', function (items) {
