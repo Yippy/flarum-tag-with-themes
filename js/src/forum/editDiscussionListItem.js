@@ -361,7 +361,7 @@ export default function () {
   let childTagFound;
   let secondaryTags;
 
-  function initialiseThemeBuilder (discussionTags, app, discussion) {
+  function initialiseThemeBuilder (discussionTags, app) {
     discussionDesign = discussionDesignOption = parentTagFound = childTagFound = null;
     secondaryTags = {
       tag: "span",
@@ -422,8 +422,6 @@ export default function () {
           }
         };
       }
-    } else {
-      discussionDesignOption = null;
     }
   }
 
@@ -558,14 +556,14 @@ export default function () {
           discussionListItemContent.children.push(<span class={'DiscussionListItem--read'+foldedClassname} style={'border-color:' + discussionDesignOption.outlineBackgroundColor}></span>);
         }
       }
-      vnode.attrs.className += ' ' + discussionDesign;
+      vnode.attrs.className += ' TagWithThemes ' + discussionDesign;
     }
   });
 
-  override(DiscussionListItem.prototype, 'mainView', function () {
+  extend(DiscussionListItem.prototype, 'mainView', function () {
     const discussion = this.attrs.discussion;
     if (discussion.isTagWithThemesEnabled()) {
-      initialiseThemeBuilder(discussion.tags(), app, discussion);
+      initialiseThemeBuilder(discussion.tags(), app);
       if (discussionDesignOption) {
         const jumpTo = this.getJumpTo();
 
@@ -584,31 +582,16 @@ export default function () {
             <ul className={classList("DiscussionListItem-info-edit", textContrastColor)}>{listItems(this.infoItems().toArray())}</ul>
           </Link>
         );
-      } else {
-        return originalDiscussiobListItemTheme(this);
       }
-    } else {
-      return originalDiscussiobListItemTheme(this);
     }
   });
 
-  function originalDiscussiobListItemTheme(discussionListItem) {
-    const discussion = discussionListItem.attrs.discussion;
-    discussionDesignOption = null;
-    const jumpTo = discussionListItem.getJumpTo();
-
-    return (
-      <Link href={app.route.discussion(discussion, jumpTo)} className="DiscussionListItem-main">
-        <h2 className="DiscussionListItem-title">
-          {discussionListItem.badgesView()}
-          <div>{highlight(discussion.title(), discussionListItem.highlightRegExp)}</div>
-        </h2>
-        <ul className="DiscussionListItem-info">{listItems(discussionListItem.infoItems().toArray())}</ul>
-      </Link>
-    );
-  }
   extend(DiscussionListItem.prototype, 'infoItems', function (items) {
     const discussion = this.attrs.discussion;
+    if (discussion.isTagWithThemesEnabled() && !discussionDesignOption) {
+      // Double check, because mainView isn't invoke first on random Discussion (most likely a bug), this cause discussionDesignOption to be null. This new bug is detectable because of the new permission group, allow discussion to skip TagWithThemes therefore we need to check discussionDesignOption is null.
+      initialiseThemeBuilder(discussion.tags(), app);
+    }
     if (discussionDesignOption) {
       let childTag = null;
       if (discussion.tags() && discussion.tags().length > 1) {

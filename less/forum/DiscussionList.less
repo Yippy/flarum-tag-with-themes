@@ -1,37 +1,91 @@
 .DiscussionList {
-  .item-tag:before {
-    content: "\a";
-    white-space: pre;
+  .TagWithThemes {
+    background: @control-bg;
+    margin: 0 0 4px;
+    padding: 0;
+    min-height: 100px;
+  
+    &-controls .Dropdown-toggle {
+      position: absolute;
+      top: -20px;
+      right: -8px;
+      width: 35px;
+      height: 35px;
+      border-radius: 5px;
+      border-width: 0 35px 35px 0;
+      color: #ffffff;
+    }
+  
+    &-info {
+      font-size: 12px;
+    }
+  
+    &--unapproved {
+      .DiscussionListItem-content {
+        opacity: 1;
+      }
+    }
+  
+    &-badges {
+      .Badge {
+        --size: 20px;
+        box-shadow: -1px 1px 2px #00000038;
+        width: var(--size);
+        height: var(--size);
+        line-height: var(--size);
+  
+        &-icon {
+          font-size: 10px;
+        }
+      }
+    }
+    .item-tag:before {
+      content: "\a";
+      white-space: pre;
+    }
+    .item-terminalPost {
+      position: absolute;
+      font-size: 14px;
+      right:10px;
+      bottom:34px;
+    }
+    .item-excerpt {
+      display:block !important;
+      font-size: 14px;
+      width:100%;
+    }
+    .item-excerpt:after {
+      content: "\a";
+      white-space: pre;
+    }
+    .item-tag {
+      width: 100%;
+      border-top: solid 1px;
+      line-height: 34px;
+      text-align: center;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+    }
+    .DiscussionListItem-stats, .DiscussionListItem-count {
+      color: white !important;
+      text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+    }
+    .DiscussionListItem-controls .Dropdown-toggle {
+      border-width: 0 !important;
+      top: -1px !important;
+      right: 5px !important;
+    }
+    .DiscussionList-loadMore {
+      margin-top: 5px;
+    
+      .Button {
+        width: 100%;
+        height: 100%;
+      }
+    }
   }
-  .item-terminalPost {
-    position: absolute;
-    font-size: 14px;
-    right:10px;
-    bottom:34px;
-  }
-  .item-excerpt {
-    display:block !important;
-    font-size: 14px;
-    width:100%;
-  }
-  .item-excerpt:after {
-    content: "\a";
-    white-space: pre;
-  }
-  .item-tag {
-    width: 100%;
-    border-top: solid 1px;
-    line-height: 34px;
-    text-align: center;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-  }
-  .DiscussionListItem-stats, .DiscussionListItem-count {
-    color: white !important;
-    text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
-  }
-  &-discussions > li {
+  .TagWithThemes > li {
     .TagLabel-inner {
       font-size: 14px;
       font-weight: bold;
@@ -43,62 +97,6 @@
       font-size: 12px;
     }
   }
-
-  &Item {
-    background: @control-bg;
-    margin: 0 0 4px;
-    padding: 0;
-
-    &-controls .Dropdown-toggle {
-      position: absolute;
-      top: -20px;
-      right: -8px;
-      width: 35px;
-      height: 35px;
-      border-radius: 5px;
-      border-width: 0 35px 35px 0;
-      color: #ffffff;
-    }
-
-    &-info {
-      font-size: 12px;
-    }
-
-    &--unapproved {
-      .DiscussionListItem-content {
-        opacity: 1;
-      }
-    }
-
-    &-badges {
-      .Badge {
-        --size: 20px;
-        box-shadow: -1px 1px 2px #00000038;
-        width: var(--size);
-        height: var(--size);
-        line-height: var(--size);
-
-        &-icon {
-          font-size: 10px;
-        }
-      }
-    }
-  }
-
-  &-loadMore {
-    margin-top: 5px;
-
-    .Button {
-      width: 100%;
-      height: 100%;
-    }
-  }
-}
-
-.DiscussionListItem-controls .Dropdown-toggle {
-  border-width: 0 !important;
-  top: -1px !important;
-  right: 5px !important;
 }
 
 .StickyNoteOutline, .StickyNoteOutlineTag, .StickyNoteOutlineTab, .StickyNoteOutlineBanner, .BasicOutline, .BasicOutlineTag, .BasicOutlineTab, .BasicOutlineBanner {
@@ -347,221 +345,239 @@
 }
 
 .App {
-  .TagLinkButton {
-    display: flex !important;
-  }
-  .item-moreTags {
-    visibility: hidden !important
-  }
-  .IndexPage .DiscussionListItem,
-  .UserPage .DiscussionListItem {
-    &-info {
-      > .item-tags {
-        top: 0;
-        right: 0;
-      }
+  .TagWithThemes {
+    .TagLinkButton {
+      display: flex !important;
     }
-  }
-
-  .DiscussionListItem {
-    &--primary {
-      font-weight: bold;
-      position: absolute;
-      top: -2px;
-      left: 10px;
-      font-size: 16px;
+    .item-moreTags {
+      visibility: hidden !important
     }
-    &--secondary {
-      font-weight: bold;
-      position: absolute;
-      right: 10px;
-      font-size: 12px;
-    }
-    
-    &--unreadoutlinecircle {
-      position: absolute;
-      top: 8px;
-      right: 8px;
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-    }
-    &--unreadoutlinesquare {
-      position: absolute;
-      top: 8px;
-      right: 8px;
-      width: 20px;
-      height: 20px;
-    }
-    &--unreadoutlinefolded {
-      content: "";
-      position: absolute;
-      top: -1px;
-      right: 1px;
-      width: 35px;
-      height: 35px;
-      border-radius: 0 0 0 5px;
-      border-width: @border-fold-width;
-      border-style: solid;
-      z-index: 1;
-    }
-    &--unreadoutlinefolded::after {
-      content: "";
-      position: absolute;
-      top: -1px;
-      right: -36px;
-      width: 37px;
-      height: 37px;
-      border-radius: 5px;
-      border-width: 0 35px 35px 0;
-      border-style: solid;
-      border-color: transparent @body-bg
-    }
-  
-    &--readfolded {
-      content: "";
-      position: absolute;
-      top: -1px;
-      right: 1px;
-      width: 35px;
-      height: 35px;
-      border-radius: 0 0 0 5px;
-      border-width: @border-fold-width;
-      border-style: solid;
-    }
-    &--readfolded::after {
-      content: "";
-      position: absolute;
-      top: -1px;
-      right: -36px;
-      width: 37px;
-      height: 37px;
-      border-radius: 5px;
-      border-width: 0 35px 35px 0;
-      border-style: solid;
-      border-color: transparent @body-bg
-    }
-    &-info-edit {
-      list-style-type: none;
-      padding: 0;
-      margin: 0;
-      font-size: 11px;
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap
-    }
-
-    &-title-edit{
-      margin: 0 0 3px;
-      line-height: 1.3;
-      font-weight: normal;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      font-size: 20px;
-    }
-
-    &-main {
-      padding: 0;
-      margin: 0;
-      position: relative;
-    }
-
-    &-badges {
-      margin: 0;
-      width: auto;
-      float: none;
-      position: absolute;
-      right: -7px;
-      top: -4px;
-      display: block;
-    }
-
-    &-author {
-      float: none;
-      margin: 0;
-      display: block;
-
-      &-container {
-        margin-right: 15px;
-        position: relative;
-
-        > .tooltip {
-          width: max-content;
+    .IndexPage .DiscussionListItem,
+    .UserPage .DiscussionListItem {
+      &-info {
+        > .item-tags {
+          top: 0;
+          right: 0;
         }
       }
-
     }
 
-    &-content {
-      display: flex;
-      padding: 12px;
-      margin-bottom: 12px;
-    }
+    .DiscussionListItem {
+      &--primary {
+        font-weight: bold;
+        position: absolute;
+        top: -2px;
+        left: 10px;
+        font-size: 16px;
+      }
+      &--secondary {
+        font-weight: bold;
+        position: absolute;
+        right: 10px;
+        font-size: 12px;
+      }
+      
+      &--unreadoutlinecircle {
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+      }
+      &--unreadoutlinesquare {
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        width: 20px;
+        height: 20px;
+      }
+      &--unreadoutlinefolded {
+        content: "";
+        position: absolute;
+        top: -1px;
+        right: 1px;
+        width: 35px;
+        height: 35px;
+        border-radius: 0 0 0 5px;
+        border-width: @border-fold-width;
+        border-style: solid;
+        z-index: 1;
+      }
+      &--unreadoutlinefolded::after {
+        content: "";
+        position: absolute;
+        top: -1px;
+        right: -36px;
+        width: 37px;
+        height: 37px;
+        border-radius: 5px;
+        border-width: 0 35px 35px 0;
+        border-style: solid;
+        border-color: transparent @body-bg
+      }
+    
+      &--readfolded {
+        content: "";
+        position: absolute;
+        top: -1px;
+        right: 1px;
+        width: 35px;
+        height: 35px;
+        border-radius: 0 0 0 5px;
+        border-width: @border-fold-width;
+        border-style: solid;
+      }
+      &--readfolded::after {
+        content: "";
+        position: absolute;
+        top: -1px;
+        right: -36px;
+        width: 37px;
+        height: 37px;
+        border-radius: 5px;
+        border-width: 0 35px 35px 0;
+        border-style: solid;
+        border-color: transparent @body-bg
+      }
+      &-info-edit {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        font-size: 11px;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap
+      }
 
-    &-stats {
-      margin-left: 10px;
-      margin-right: 15px;
-    }
+      &-title-edit{
+        margin: 0 0 3px;
+        line-height: 1.3;
+        font-weight: normal;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: 20px;
+      }
 
-    &-count {
-      margin: 0;
-      padding: 0;
-      float: none;
-      display: block;
+      &-main {
+        padding: 0;
+        margin: 0;
+        position: relative;
+      }
 
-      &::before {
-        margin: 0 5px 0 0;
+      &-badges {
+        margin: 0;
+        width: auto;
+        float: none;
+        position: absolute;
+        right: -7px;
+        top: -4px;
+        display: block;
+      }
+
+      &-author {
+        float: none;
+        margin: 0;
+        display: block;
+
+        &-container {
+          margin-right: 15px;
+          position: relative;
+
+          > .tooltip {
+            width: max-content;
+          }
+        }
+
+      }
+
+      &-content {
+        min-height: 100px;
+        display: flex;
+        padding: 12px;
+        margin-bottom: 12px;
+      }
+
+      &-stats {
+        margin-left: 10px;
+        margin-right: 15px;
+      }
+
+      &-count {
+        margin: 0;
         padding: 0;
         float: none;
+        display: block;
+        &::before {
+          margin: 0 5px 0 0;
+          padding: 0;
+          float: none;
+        }
       }
-    }
-    &-footer {
-      & {
-        position: absolute;
-        width: 100%;
-        left: 0;
-        bottom: 0;
+      &-footer {
+        & {
+          position: absolute;
+          width: 100%;
+          left: 0;
+          bottom: 0;
+        }
+        .PrimaryTagLabel {
+          font-size: 14px;
+          font-weight: bold;
+          position: absolute;
+          padding-top: 2px;
+          padding-right: 5px;
+          padding-bottom: 2px;
+          padding-left: 5px;
+        }
       }
-      .PrimaryTagLabel {
-        font-size: 14px;
-        font-weight: bold;
-        position: absolute;
-        padding-top: 2px;
-        padding-right: 5px;
-        padding-bottom: 2px;
-        padding-left: 5px;
-      }
-    }
-    &--tabfooter {
-      & {
-        position: absolute;
-        width: 100%;
-        background: @body-bg
-      }
-      .PrimaryTagLabel {
-        font-size: 14px;
-        font-weight: bold;
-        position: absolute;
-        padding-top: 2px;
-        padding-right: 5px;
-        padding-bottom: 2px;
-        padding-left: 5px;
+      &--tabfooter {
+        & {
+          position: absolute;
+          width: 100%;
+          background: @body-bg
+        }
+        .PrimaryTagLabel {
+          font-size: 14px;
+          font-weight: bold;
+          position: absolute;
+          padding-top: 2px;
+          padding-right: 5px;
+          padding-bottom: 2px;
+          padding-left: 5px;
+        }
       }
     }
   }
 }
 @media screen and (min-width: 768px) and (max-width: 992px) {
-  .App .TagLinkButton {
-    visibility: hidden !important;
-    display: none !important;
+  .App {
+    .TagWithThemes {
+      .TagLinkButton {
+        visibility: hidden !important;
+        display: none !important;
+      }
+    }
+  }
+}
+@media screen and (max-width: 767.98px) {
+  .TagWithThemes {
+    .DiscussionListItem-count {
+      background: unset !important;
+    }
   }
 }
 @media @phone {
-  .item-terminalPost {
-    display: none !important;
-  }
-  .item-tag {
-    border-top: none;
+  .TagWithThemes {
+    .DiscussionListItem-count {
+      background: unset !important;
+    }
+    .item-terminalPost {
+      display: none !important;
+    }
+    .item-tag {
+      border-top: none;
+    }
   }
 }
 .DiscussionListItem.StickyNote,
