@@ -185,9 +185,10 @@ app.initializers.add(settingsPrefix, (app) => {
               m('tbody', [
                 tagDesigns.map((rule, index) => m('table', {
                   border: '1px solid black',
+                  'style': rule.isEnabled ?'background-color: #ffffff':'background-color: #F88379',
                 }, [
                   m('thead', m('tr', [
-                    m('th', app.translator.trans(translationPrefix + 'designs.banner', {index: index+1})),
+                    m('th', app.translator.trans(translationPrefix + 'designs.banner', {index: index+1, isEnabled: rule.isEnabled ? app.translator.trans(translationPrefix + 'designs.is_enabled.enabled'): app.translator.trans(translationPrefix + 'designs.is_enabled.disabled')})),
                     m('th', Button.component({
                       className: 'Button Button--icon',
                       icon: 'fas fa-times',
