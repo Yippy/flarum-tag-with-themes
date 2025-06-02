@@ -1,6 +1,6 @@
 .DiscussionList {
   .TagWithThemes {
-    background: @control-bg;
+    background: var(--control-bg);
     margin: 0 0 4px;
     padding: 0;
     min-height: 100px;
@@ -412,7 +412,7 @@
         border-radius: 5px;
         border-width: 0 35px 35px 0;
         border-style: solid;
-        border-color: transparent @body-bg
+        border-color: transparent var(--body-bg)
       }
     
       &--readfolded {
@@ -436,7 +436,7 @@
         border-radius: 5px;
         border-width: 0 35px 35px 0;
         border-style: solid;
-        border-color: transparent @body-bg
+        border-color: transparent var(--body-bg)
       }
       &-info-edit {
         list-style-type: none;
@@ -479,6 +479,7 @@
         display: block;
 
         &-container {
+          width: 100%;
           margin-right: 15px;
           position: relative;
 
@@ -497,7 +498,7 @@
       }
 
       &-stats {
-        margin-left: 10px;
+        margin-left: -100px;
         margin-right: 15px;
       }
 
@@ -533,7 +534,7 @@
         & {
           position: absolute;
           width: 100%;
-          background: @body-bg
+          background: var(--body-bg)
         }
         .PrimaryTagLabel {
           font-size: 14px;

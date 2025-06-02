@@ -1,5 +1,4 @@
-import app from 'flarum/app';
-import ExtensionPage from 'flarum/admin/components/ExtensionPage';
+import app from 'flarum/admin/app';
 import Button from 'flarum/common/components/Button';
 import textContrastClass from 'flarum/common/helpers/textContrastClass';
 
@@ -19,7 +18,7 @@ const settingsPrefix = 'yippy-tag-with-themes';
 const translationPrefix = 'yippy-tag-with-themes.admin.';
 const tagDesignSettingKey = settingsPrefix+'.design-by-tags';
 
-app.initializers.add(settingsPrefix, (app) => {
+app.initializers.add(settingsPrefix, () => {
     const fontClassChoiceAvailable = [
         {
             id: 'Automatic',
@@ -137,7 +136,7 @@ app.initializers.add(settingsPrefix, (app) => {
         );
         return $state;
     }
-    app.extensionData
+    app.registry
     .for(settingsPrefix)
       .registerPermission(
         {

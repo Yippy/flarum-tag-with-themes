@@ -1,6 +1,6 @@
 import { extend, override } from 'flarum/common/extend';
 import DiscussionListItem from 'flarum/forum/components/DiscussionListItem';
-import { truncate } from 'flarum/utils/string';
+import { truncate } from 'flarum/common/utils/string';
 import textContrastClass from 'flarum/common/helpers/textContrastClass';
 import classList from 'flarum/common/utils/classList';
 import Link from 'flarum/common/components/Link';

@@ -13,8 +13,9 @@ namespace Yippy\FlarumTagWithThemes;
 
 use Flarum\Extend;
 use Flarum\Frontend\Document;
-use Flarum\Api\Serializer\DiscussionSerializer;
-use Yippy\FlarumTagWithThemes\Listener\AddDiscussionAttributes;
+use Flarum\Api\Resource;
+use Flarum\Api\Schema;
+use Flarum\Api\Context;
 
 return [
     (new Extend\Frontend('admin'))
@@ -32,8 +33,13 @@ return [
     (new Extend\Frontend('admin'))
         ->js(__DIR__.'/js/dist/admin.js')
         ->css(__DIR__.'/less/admin.less'),
-    (new Extend\ApiSerializer(DiscussionSerializer::class))
-        ->attributes(AddDiscussionAttributes::class),
+    (new Extend\ApiResource(Resource\DiscussionResource::class))
+        ->fields(fn () => [
+            Schema\Boolean::make('isTagWithThemesEnabled')
+                ->get(function (object $forum, Context $context) {
+                    return $context->getActor()->hasPermissionLike('yippy-tag-with-themes.display-themes');
+                }),
+        ]),
     (new Extend\Settings())
         ->serializeToForum('yippy-tag-with-themes.designDefault', 'yippy-tag-with-themes.design-default', function (?string $value): string {
             return $value ? $value : 'StickyNote';
