@@ -249,10 +249,10 @@
       top: 8px;
     }
     &--outline {
-      border-radius: @border-radius;
+      border-radius: @border-outline-radius;
       position: absolute;
       width: 100%;
-      left: -1px;
+      left: 0px;
       pointer-events:none;
     }
   }
@@ -273,7 +273,7 @@
     &--outline {
       position: absolute;
       width: 100%;
-      left: -1px;
+      left: 0px;
       pointer-events:none;
     }
   }
@@ -582,22 +582,27 @@
 }
 .DiscussionListItem.StickyNote,
 .DiscussionListItem.StickyNoteTag,
-.DiscussionListItem.StickyNoteTab,
 .DiscussionListItem.StickyNoteBanner,
 .DiscussionListItem.Basic,
 .DiscussionListItem.BasicTag,
-.DiscussionListItem.BasicTab,
 .DiscussionListItem.BasicBanner,
 .DiscussionListItem.StickyNoteOutline,
 .DiscussionListItem.StickyNoteOutlineTag,
-.DiscussionListItem.StickyNoteOutlineTab,
 .DiscussionListItem.StickyNoteOutlineBanner,
 .DiscussionListItem.BasicOutline,
 .DiscussionListItem.BasicOutlineTag,
-.DiscussionListItem.BasicOutlineTab,
 .DiscussionListItem.BasicOutlineBanner {
   border-radius: @border-radius !important;
 }
+
+.DiscussionListItem.StickyNoteTab,
+.DiscussionListItem.BasicTab,
+.DiscussionListItem.StickyNoteOutlineTab,
+.DiscussionListItem.BasicOutlineTab {
+  border-radius: @border-outline-radius !important;
+}
+
+
 
 .DiscussionListItem.Flat,
 .DiscussionListItem.FlatTag,
