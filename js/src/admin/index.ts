@@ -193,7 +193,7 @@ app.initializers.add(settingsPrefix, () => {
                       icon: 'fas fa-times',
                       onclick: () => {
                         tagDesigns.splice(index, 1);
-                          this.setting(tagDesignSettingKey)(tagDesigns.length > 0 ? JSON.stringify(tagDesigns) : null);
+                          this.setting(tagDesignSettingKey)(tagDesigns.length > 0 ? JSON.stringify(tagDesigns) : '');
                       },
                     })
                     )
