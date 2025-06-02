@@ -51,37 +51,37 @@ Setup example within the Tags Settings Extension
 
 <details markdown="3"><summary>Flat Theme</summary>
 
-![Sticky Note Outline Theme](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/flat_theme.png)
-![Sticky Note Outline (Primary Tag) Theme](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/flat_theme_-_primary_tag.png)
-![Sticky Note Outline (Primary Tab) Theme](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/flat_theme_-_primary_tab.png)
-![Sticky Note Outline (Primary Banner) Theme](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/flat_theme_-_primary_banner.png)
+![Flat Theme](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/flat_theme.png)
+![Flat (Primary Tag) Theme](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/flat_theme_-_primary_tag.png)
+![Flat (Primary Tab) Theme](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/flat_theme_-_primary_tab.png)
+![Flat (Primary Banner) Theme](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/flat_theme_-_primary_banner.png)
 
 </details>
 
 <details markdown="4"><summary>Flat Border Theme</summary>
 
-![Sticky Note Outline Theme](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/flat_border_theme.png)
-![Sticky Note Outline (Primary Tag) Theme](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/flat_border_theme_-_primary_tag.png)
-![Sticky Note Outline (Primary Tab) Theme](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/flat_border_theme_-_primary_tab.png)
-![Sticky Note Outline (Primary Banner) Theme](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/flat_border_theme_-_primary_banner.png)
+![Flat Border Theme](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/flat_border_theme.png)
+![Flat Border(Primary Tag) Theme](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/flat_border_theme_-_primary_tag.png)
+![Flat Border (Primary Tab) Theme](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/flat_border_theme_-_primary_tab.png)
+![Flat Border (Primary Banner) Theme](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/flat_border_theme_-_primary_banner.png)
 
 </details>
 
 <details markdown="5"><summary>Basic Theme</summary>
 
-![Sticky Note Outline Theme](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/basic_theme.png)
-![Sticky Note Outline (Primary Tag) Theme](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/basic_theme_-_primary_tag.png)
-![Sticky Note Outline (Primary Tab) Theme](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/basic_theme_-_primary_tab.png)
-![Sticky Note Outline (Primary Banner) Theme](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/basic_theme_-_primary_banner.png)
+![Basic Theme](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/basic_theme.png)
+![Basic (Primary Tag) Theme](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/basic_theme_-_primary_tag.png)
+![Basic (Primary Tab) Theme](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/basic_theme_-_primary_tab.png)
+![Basic (Primary Banner) Theme](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/basic_theme_-_primary_banner.png)
 
 </details>
 
 <details markdown="6"><summary>Basic Outline Theme</summary>
 
-![Sticky Note Outline Theme](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/basic_outline_theme.png)
-![Sticky Note Outline (Primary Tag) Theme](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/basic_outline_theme_-_primary_tag.png)
-![Sticky Note Outline (Primary Tab) Theme](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/basic_outline_theme_-_primary_tab.png)
-![Sticky Note Outline (Primary Banner) Theme](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/basic_outline_theme_-_primary_banner.png)
+![Basic Outline Theme](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/basic_outline_theme.png)
+![Basic Outline (Primary Tag) Theme](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/basic_outline_theme_-_primary_tag.png)
+![Basic Outline (Primary Tab) Theme](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/basic_outline_theme_-_primary_tab.png)
+![Basic Outline (Primary Banner) Theme](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/basic_outline_theme_-_primary_banner.png)
 
 </details>
 
