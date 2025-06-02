@@ -14,35 +14,74 @@ You must run this command for this extension to work, this is because the assets
 
     `php flarum assets:publish`
 
+![Run Flarum Assets Command](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/run_flarum_assets_command.png)
+
 If you are unable to run that command, and the dropdown menu is still not working. You can copy the [asset manually](https://github.com/Yippy/flarum-tag-with-themes/tree/main/assets) and move it to the [FLARUM_DATA_DIRECTORY]\assets\extensions\yippy-tag-with-themes\ folder.
 
 ## Flarum Tag with Themes
 
-Currently the default Flarum design theme does not cater for different theme style with Tags that are assigned to the discussion. This was created to allow Administrators to change the entire themes with Tag Theming. Currently there is only 24 styles of themes, and in the future there can be additional themes. 
+ This was created to allow Administrators to change the entire dicussion with Tag Theming, this can be done for assigned User Permission Groups or individual Tags.
+ 
+ You are able to assign the default as None, and just add customisation to only show Tag with Themes for specific Tags.
+ 
+ Currently there is 24 styles of themes, and in the future there can be additional themes. 
 
 ### Themes
 
 Setup example within the Tags Settings Extension
-![Tag Setup](/assets/images/tag_setup.png)
+![Tag Setup](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/tag_setup.png)
 
-Sticky Note 
-![Sticky Note Theme](/assets/images/sticky_note_theme.png)
-![Sticky Note (Primary Tag) Theme](/assets/images/sticky_note_theme_-_primary_tag.png)
-![Sticky Note (Primary Tab) Theme](/assets/images/sticky_note_theme_-_primary_tab.png)
-![Sticky Note (Primary Banner) Theme](/assets/images/sticky_note_theme_-_primary_banner.png)
+<details markdown="1"><summary>Sticky Note</summary>
+![Sticky Note Theme](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/sticky_note_theme.png)
+![Sticky Note (Primary Tag) Theme](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/sticky_note_theme_-_primary_tag.png)
+![Sticky Note (Primary Tab) Theme](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/sticky_note_theme_-_primary_tab.png)
+![Sticky Note (Primary Banner) Theme](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/sticky_note_theme_-_primary_banner.png)
+</details>
 
-Sticky Note Outline
-![Sticky Note Outline Theme](/assets/images/sticky_note_outline_theme.png)
-![Sticky Note Outline (Primary Tag) Theme](/assets/images/sticky_note_outline_theme_-_primary_tag.png)
-![Sticky Note Outline (Primary Tab) Theme](/assets/images/sticky_note_outline_theme_-_primary_tab.png)
-![Sticky Note Outline (Primary Banner) Theme](/assets/images/sticky_note_outline_theme_-_primary_banner.png)
+<details markdown="2"><summary>Sticky Note Outline</summary>
+![Sticky Note Outline Theme](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/sticky_note_outline_theme.png)
+![Sticky Note Outline (Primary Tag) Theme](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/sticky_note_outline_theme_-_primary_tag.png)
+![Sticky Note Outline (Primary Tab) Theme](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/sticky_note_outline_theme_-_primary_tab.png)
+![Sticky Note Outline (Primary Banner) Theme](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/sticky_note_outline_theme_-_primary_banner.png)
+</details>
+
+<details markdown="3"><summary>Flat Theme</summary>
+![Sticky Note Outline Theme](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/flat_theme.png)
+![Sticky Note Outline (Primary Tag) Theme](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/flat_theme_-_primary_tag.png)
+![Sticky Note Outline (Primary Tab) Theme](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/flat_theme_-_primary_tab.png)
+![Sticky Note Outline (Primary Banner) Theme](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/flat_theme_-_primary_banner.png)
+</details>
+
+<details markdown="4"><summary>Flat Border Theme</summary>
+![Sticky Note Outline Theme](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/flat_border_theme.png)
+![Sticky Note Outline (Primary Tag) Theme](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/flat_border_theme_-_primary_tag.png)
+![Sticky Note Outline (Primary Tab) Theme](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/flat_border_theme_-_primary_tab.png)
+![Sticky Note Outline (Primary Banner) Theme](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/flat_border_theme_-_primary_banner.png)
+</details>
+
+<details markdown="5"><summary>Basic Theme</summary>
+![Sticky Note Outline Theme](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/basic_theme.png)
+![Sticky Note Outline (Primary Tag) Theme](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/basic_theme_-_primary_tag.png)
+![Sticky Note Outline (Primary Tab) Theme](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/basic_theme_-_primary_tab.png)
+![Sticky Note Outline (Primary Banner) Theme](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/basic_theme_-_primary_banner.png)
+</details>
+
+<details markdown="6"><summary>Basic Outline Theme</summary>
+![Sticky Note Outline Theme](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/basic_outline_theme.png)
+![Sticky Note Outline (Primary Tag) Theme](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/basic_outline_theme_-_primary_tag.png)
+![Sticky Note Outline (Primary Tab) Theme](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/basic_outline_theme_-_primary_tab.png)
+![Sticky Note Outline (Primary Banner) Theme](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/basic_outline_theme_-_primary_banner.png)
+</details>
 
 ### Customisation
 Switch between Design themes depending on selected Primary Tag, this help make dicussion with a specific tag to stand out more.
-![Customising design by tags](/assets/images/customising_design_by_tags_example.png)
+![Customising design by tags](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/customising_design_by_tags_example.png)
 
-Override Font
-![Customising design by tags fot](/assets/images/customising_design_by_tags_font_example.png)
+Override Font, useful for text legibility due to Tag Colours
+![Customising design by tags fot](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/customising_design_by_tags_font_example.png)
+
+Assign Permission
+![Customising design by tags fot](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/assign_permission.png)
 
 ## Support
 
