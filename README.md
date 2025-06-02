@@ -31,7 +31,7 @@ If you are unable to run that command, and the dropdown menu is still not workin
 Setup example within the Tags Settings Extension
 ![Tag Setup](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/tag_setup.png)
 
-<details markdown="1"><summary>Sticky Note</summary>
+<details markdown="1"><summary>Sticky Note - Click here to display examples</summary>
 
 ![Sticky Note Theme](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/sticky_note_theme.png)
 ![Sticky Note (Primary Tag) Theme](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/sticky_note_theme_-_primary_tag.png)
@@ -40,7 +40,7 @@ Setup example within the Tags Settings Extension
 
 </details>
 
-<details markdown="2"><summary>Sticky Note Outline</summary>
+<details markdown="2"><summary>Sticky Note Outline - Click here to display examples</summary>
 
 ![Sticky Note Outline Theme](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/sticky_note_outline_theme.png)
 ![Sticky Note Outline (Primary Tag) Theme](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/sticky_note_outline_theme_-_primary_tag.png)
@@ -49,7 +49,7 @@ Setup example within the Tags Settings Extension
 
 </details>
 
-<details markdown="3"><summary>Flat Theme</summary>
+<details markdown="3"><summary>Flat Theme - Click here to display examples</summary>
 
 ![Flat Theme](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/flat_theme.png)
 ![Flat (Primary Tag) Theme](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/flat_theme_-_primary_tag.png)
@@ -58,7 +58,7 @@ Setup example within the Tags Settings Extension
 
 </details>
 
-<details markdown="4"><summary>Flat Border Theme</summary>
+<details markdown="4"><summary>Flat Border Theme - Click here to display examples</summary>
 
 ![Flat Border Theme](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/flat_border_theme.png)
 ![Flat Border(Primary Tag) Theme](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/flat_border_theme_-_primary_tag.png)
@@ -67,7 +67,7 @@ Setup example within the Tags Settings Extension
 
 </details>
 
-<details markdown="5"><summary>Basic Theme</summary>
+<details markdown="5"><summary>Basic Theme - Click here to display examples</summary>
 
 ![Basic Theme](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/basic_theme.png)
 ![Basic (Primary Tag) Theme](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/basic_theme_-_primary_tag.png)
@@ -76,7 +76,7 @@ Setup example within the Tags Settings Extension
 
 </details>
 
-<details markdown="6"><summary>Basic Outline Theme</summary>
+<details markdown="6"><summary>Basic Outline Theme - Click here to display examples</summary>
 
 ![Basic Outline Theme](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/basic_outline_theme.png)
 ![Basic Outline (Primary Tag) Theme](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/basic_outline_theme_-_primary_tag.png)
