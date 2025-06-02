@@ -17,6 +17,14 @@ use Flarum\Api\Serializer\DiscussionSerializer;
 use Yippy\FlarumTagWithThemes\Listener\AddDiscussionAttributes;
 
 return [
+    (new Extend\Frontend('admin'))
+        ->content(function (Document $document) {
+            $document->head[] = '
+                <script src="/assets/extensions/yippy-tag-with-themes/jquery.min.js"></script>
+                <script src="/assets/extensions/yippy-tag-with-themes/select2.min.js"></script>
+                <link href="/assets/extensions/yippy-tag-with-themes/select2.min.css" rel="stylesheet">
+            ';
+        }),
     (new Extend\Frontend('forum'))
         ->js(__DIR__.'/js/dist/forum.js')
         ->css(__DIR__.'/less/forum.less'),
