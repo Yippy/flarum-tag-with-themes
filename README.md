@@ -32,45 +32,57 @@ Setup example within the Tags Settings Extension
 ![Tag Setup](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/tag_setup.png)
 
 <details markdown="1"><summary>Sticky Note</summary>
+
 ![Sticky Note Theme](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/sticky_note_theme.png)
 ![Sticky Note (Primary Tag) Theme](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/sticky_note_theme_-_primary_tag.png)
 ![Sticky Note (Primary Tab) Theme](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/sticky_note_theme_-_primary_tab.png)
 ![Sticky Note (Primary Banner) Theme](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/sticky_note_theme_-_primary_banner.png)
+
 </details>
 
 <details markdown="2"><summary>Sticky Note Outline</summary>
+
 ![Sticky Note Outline Theme](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/sticky_note_outline_theme.png)
 ![Sticky Note Outline (Primary Tag) Theme](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/sticky_note_outline_theme_-_primary_tag.png)
 ![Sticky Note Outline (Primary Tab) Theme](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/sticky_note_outline_theme_-_primary_tab.png)
 ![Sticky Note Outline (Primary Banner) Theme](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/sticky_note_outline_theme_-_primary_banner.png)
+
 </details>
 
 <details markdown="3"><summary>Flat Theme</summary>
+
 ![Sticky Note Outline Theme](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/flat_theme.png)
 ![Sticky Note Outline (Primary Tag) Theme](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/flat_theme_-_primary_tag.png)
 ![Sticky Note Outline (Primary Tab) Theme](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/flat_theme_-_primary_tab.png)
 ![Sticky Note Outline (Primary Banner) Theme](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/flat_theme_-_primary_banner.png)
+
 </details>
 
 <details markdown="4"><summary>Flat Border Theme</summary>
+
 ![Sticky Note Outline Theme](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/flat_border_theme.png)
 ![Sticky Note Outline (Primary Tag) Theme](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/flat_border_theme_-_primary_tag.png)
 ![Sticky Note Outline (Primary Tab) Theme](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/flat_border_theme_-_primary_tab.png)
 ![Sticky Note Outline (Primary Banner) Theme](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/flat_border_theme_-_primary_banner.png)
+
 </details>
 
 <details markdown="5"><summary>Basic Theme</summary>
+
 ![Sticky Note Outline Theme](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/basic_theme.png)
 ![Sticky Note Outline (Primary Tag) Theme](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/basic_theme_-_primary_tag.png)
 ![Sticky Note Outline (Primary Tab) Theme](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/basic_theme_-_primary_tab.png)
 ![Sticky Note Outline (Primary Banner) Theme](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/basic_theme_-_primary_banner.png)
+
 </details>
 
 <details markdown="6"><summary>Basic Outline Theme</summary>
+
 ![Sticky Note Outline Theme](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/basic_outline_theme.png)
 ![Sticky Note Outline (Primary Tag) Theme](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/basic_outline_theme_-_primary_tag.png)
 ![Sticky Note Outline (Primary Tab) Theme](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/basic_outline_theme_-_primary_tab.png)
 ![Sticky Note Outline (Primary Banner) Theme](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/basic_outline_theme_-_primary_banner.png)
+
 </details>
 
 ### Customisation
@@ -80,7 +92,7 @@ Switch between Design themes depending on selected Primary Tag, this help make d
 Override Font, useful for text legibility due to Tag Colours
 ![Customising design by tags fot](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/customising_design_by_tags_font_example.png)
 
-Assign Permission
+### Assign User Permission Group
 ![Customising design by tags fot](https://github.com/Yippy/flarum-tag-with-themes/raw/main/assets/images/assign_permission.png)
 
 ## Support
