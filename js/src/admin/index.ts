@@ -12,6 +12,9 @@ interface TagDesign {
     outlineBackgroundColor: string,
     secondaryFontClass: string,
     unreadColor: string,
+    opacityBackground: number,
+    opacityFooter: number,
+    opacityOutline: number,
     isEnabled: boolean
 }
 const settingsPrefix = 'yippy-tag-with-themes';
@@ -180,7 +183,7 @@ app.initializers.add(settingsPrefix, () => {
           return m('.Form-group', [
             m('label', app.translator.trans(translationPrefix + 'designs.title')),
             m('.helpText', app.translator.trans(translationPrefix + 'designs.description')),
-            m('table', {style:'table-layout:fixed'}, [
+            m('table', {style:'table-layout:fixed;color:#000000;'}, [
               m('tbody', [
                 tagDesigns.map((rule, index) => m('table', {
                   border: '1px solid black',
@@ -212,7 +215,19 @@ app.initializers.add(settingsPrefix, () => {
                           m('td', app.translator.trans(translationPrefix + 'designs.data.themeName')),
                           m('td',
                             m('select', {
-                              oncreate: ({dom}) => $(dom).select2({ width: '100%', multiple: false, data: designThemeAvailable}).on("change", function() {
+                              oncreate: ({dom}) => $(dom).select2({
+                                width: '100%',
+                                multiple: false,
+                                data: designThemeAvailable,
+                                templateResult: (value) => {
+                                  var output = '<span style="color:#000000;">';
+                                  output += value.text+"</span>";
+                                  return output;
+                                },
+                                escapeMarkup: (m) => {
+                                  return m;
+                                },
+                              }).on("change", function() {
                                 this.dispatchEvent(new CustomEvent('edit', {"detail": $(this).val()}));
                               }).on('select2:select', function(e){
                                 var id = e.params.data.id;
@@ -256,6 +271,7 @@ app.initializers.add(settingsPrefix, () => {
                           m('td', app.translator.trans(translationPrefix + 'designs.data.primary_background_color')),
                           m('td', m('input.FormControl', {
                             type: 'color',
+                            style: "background-color:#e8ecf2;color:#000000",
                             value: rule.primaryBackgroundColor || '',
                             placeholder: '',
                             onchange: (event: InputEvent) => {
@@ -287,6 +303,7 @@ app.initializers.add(settingsPrefix, () => {
                           m('td', app.translator.trans(translationPrefix + 'designs.data.child_background_color')),
                           m('td', m('input.FormControl', {
                             type: 'color',
+                            style: "background-color:#e8ecf2;color:#000000",
                             value: rule.childBackgroundColor || '',
                             placeholder: '',
                             onchange: (event: InputEvent) => {
@@ -318,6 +335,7 @@ app.initializers.add(settingsPrefix, () => {
                           m('td', app.translator.trans(translationPrefix + 'designs.data.outline_background_color')),
                           m('td', m('input.FormControl', {
                             type: 'color',
+                            style: "background-color:#e8ecf2;color:#000000",
                             value: rule.outlineBackgroundColor || '',
                             placeholder: '',
                             onchange: (event: InputEvent) => {
@@ -330,6 +348,7 @@ app.initializers.add(settingsPrefix, () => {
                           m('td', app.translator.trans(translationPrefix + 'designs.data.unread_color')),
                           m('td', m('input.FormControl', {
                             type: 'color',
+                            style: "background-color:#e8ecf2;color:#000000",
                             value: rule.unreadColor || '',
                             placeholder: '',
                             onchange: (event: InputEvent) => {
@@ -356,6 +375,54 @@ app.initializers.add(settingsPrefix, () => {
                               }
                             })
                           )
+                        ]),
+                        m('tr', [
+                          m('td', app.translator.trans(translationPrefix + 'designs.data.opacity_background')),
+                          m('td', m('input.FormControl', {
+                            type: 'number',
+                            style: "background-color:#e8ecf2;color:#000000",
+                            value: rule.opacityBackground || 1,
+                            placeholder: 1,
+                            step: 0.1,
+                            min: 0,
+                            max: 1,
+                            onchange: (event: InputEvent) => {
+                                rule.opacityBackground = (event.target as HTMLInputElement).value;
+                                this.setting(tagDesignSettingKey)(JSON.stringify(tagDesigns));
+                            },
+                          })),
+                        ]),
+                        m('tr', [
+                          m('td', app.translator.trans(translationPrefix + 'designs.data.opacity_footer')),
+                          m('td', m('input.FormControl', {
+                            type: 'number',
+                            style: "background-color:#e8ecf2;color:#000000",
+                            value: rule.opacityFooter || 1,
+                            placeholder: 1,
+                            step: 0.1,
+                            min: 0,
+                            max: 1,
+                            onchange: (event: InputEvent) => {
+                                rule.opacityFooter = (event.target as HTMLInputElement).value;
+                                this.setting(tagDesignSettingKey)(JSON.stringify(tagDesigns));
+                            },
+                          })),
+                        ]),
+                        m('tr', [
+                          m('td', app.translator.trans(translationPrefix + 'designs.data.opacity_outline')),
+                          m('td', m('input.FormControl', {
+                            type: 'number',
+                            style: "background-color:#e8ecf2;color:#000000",
+                            value: rule.opacityOutline || 1,
+                            placeholder: 1,
+                            step: 0.1,
+                            min: 0,
+                            max: 1,
+                            onchange: (event: InputEvent) => {
+                                rule.opacityOutline = (event.target as HTMLInputElement).value;
+                                this.setting(tagDesignSettingKey)(JSON.stringify(tagDesigns));
+                            },
+                          })),
                         ]),
                         m('tr', [
                           m('td', app.translator.trans(translationPrefix + 'designs.data.is_enabled')),
@@ -385,6 +452,9 @@ app.initializers.add(settingsPrefix, () => {
                       outlineBackgroundColor: '#595a58',
                       unreadColor: '#2199fc',
                       secondaryFontClass: 'Automatic',
+                      opacityBackground: 1,
+                      opacityFooter: 1,
+                      opacityOutline: 1,
                       isEnabled: true
                     });
   

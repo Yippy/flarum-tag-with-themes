@@ -30,6 +30,9 @@ export default function () {
       unreadColor: '#2199fc',
       unreadCSS: 'folded',
       secondaryFontClass: null,
+      opacityBackground: 1,
+      opacityFooter: 1,
+      opacityOutline: 1
     },
     "StickyNoteTag": {
       isPrimaryTagBackgroundColorRequired: true,
@@ -44,6 +47,9 @@ export default function () {
       unreadColor: '#2199fc',
       unreadCSS: 'folded',
       secondaryFontClass: null,
+      opacityBackground: 1,
+      opacityFooter: 1,
+      opacityOutline: 1
     },
     "StickyNoteTab": {
       isPrimaryTagBackgroundColorRequired: true,
@@ -58,6 +64,9 @@ export default function () {
       unreadColor: '#2199fc',
       unreadCSS: 'folded',
       secondaryFontClass: null,
+      opacityBackground: 1,
+      opacityFooter: 1,
+      opacityOutline: 1
     },
     "StickyNoteBanner": {
       isPrimaryTagBackgroundColorRequired: true,
@@ -72,6 +81,9 @@ export default function () {
       unreadColor: '#2199fc',
       unreadCSS: 'folded',
       secondaryFontClass: null,
+      opacityBackground: 1,
+      opacityFooter: 1,
+      opacityOutline: 1
     },
     "StickyNoteOutline": {
       isPrimaryTagBackgroundColorRequired: false,
@@ -86,6 +98,9 @@ export default function () {
       unreadColor: '#2199fc',
       unreadCSS: 'folded',
       secondaryFontClass: null,
+      opacityBackground: 1,
+      opacityFooter: 1,
+      opacityOutline: 1
     },
     "StickyNoteOutlineTag": {
       isPrimaryTagBackgroundColorRequired: true,
@@ -100,6 +115,9 @@ export default function () {
       unreadColor: '#2199fc',
       unreadCSS: 'folded',
       secondaryFontClass: null,
+      opacityBackground: 1,
+      opacityFooter: 1,
+      opacityOutline: 1
     },
     "StickyNoteOutlineTab": {
       isPrimaryTagBackgroundColorRequired: true,
@@ -114,6 +132,9 @@ export default function () {
       unreadColor: '#2199fc',
       unreadCSS: 'folded',
       secondaryFontClass: null,
+      opacityBackground: 1,
+      opacityFooter: 1,
+      opacityOutline: 1
     },
     "StickyNoteOutlineBanner": {
       isPrimaryTagBackgroundColorRequired: true,
@@ -128,6 +149,9 @@ export default function () {
       unreadColor: '#2199fc',
       unreadCSS: 'folded',
       secondaryFontClass: null,
+      opacityBackground: 1,
+      opacityFooter: 1,
+      opacityOutline: 1
     },
     "Basic": {
       isPrimaryTagBackgroundColorRequired: false,
@@ -142,6 +166,9 @@ export default function () {
       unreadColor: '#2199fc',
       unreadCSS: 'circle',
       secondaryFontClass: null,
+      opacityBackground: 1,
+      opacityFooter: 1,
+      opacityOutline: 1
     },
     "BasicTag": {
       isPrimaryTagBackgroundColorRequired: true,
@@ -156,6 +183,9 @@ export default function () {
       unreadColor: '#2199fc',
       unreadCSS: 'circle',
       secondaryFontClass: null,
+      opacityBackground: 1,
+      opacityFooter: 1,
+      opacityOutline: 1
     },
     "BasicTab": {
       isPrimaryTagBackgroundColorRequired: true,
@@ -170,6 +200,9 @@ export default function () {
       unreadColor: '#2199fc',
       unreadCSS: 'circle',
       secondaryFontClass: null,
+      opacityBackground: 1,
+      opacityFooter: 1,
+      opacityOutline: 1
     },
     "BasicBanner": {
       isPrimaryTagBackgroundColorRequired: true,
@@ -184,6 +217,9 @@ export default function () {
       unreadColor: '#2199fc',
       unreadCSS: 'circle',
       secondaryFontClass: null,
+      opacityBackground: 1,
+      opacityFooter: 1,
+      opacityOutline: 1
     },
     "BasicOutline": {
       isPrimaryTagBackgroundColorRequired: false,
@@ -198,6 +234,9 @@ export default function () {
       unreadColor: '#2199fc',
       unreadCSS: 'circle',
       secondaryFontClass: null,
+      opacityBackground: 1,
+      opacityFooter: 1,
+      opacityOutline: 1
     },
     "BasicOutlineTag": {
       isPrimaryTagBackgroundColorRequired: true,
@@ -212,6 +251,9 @@ export default function () {
       unreadColor: '#2199fc',
       unreadCSS: 'circle',
       secondaryFontClass: null,
+      opacityBackground: 1,
+      opacityFooter: 1,
+      opacityOutline: 1
     },
     "BasicOutlineTab": {
       isPrimaryTagBackgroundColorRequired: true,
@@ -226,6 +268,9 @@ export default function () {
       unreadColor: '#2199fc',
       unreadCSS: 'circle',
       secondaryFontClass: null,
+      opacityBackground: 1,
+      opacityFooter: 1,
+      opacityOutline: 1
     },
     "BasicOutlineBanner": {
       isPrimaryTagBackgroundColorRequired: true,
@@ -240,6 +285,9 @@ export default function () {
       unreadColor: '#2199fc',
       unreadCSS: 'circle',
       secondaryFontClass: null,
+      opacityBackground: 1,
+      opacityFooter: 1,
+      opacityOutline: 1
     },
     "Flat": {
       isPrimaryTagBackgroundColorRequired: false,
@@ -254,6 +302,9 @@ export default function () {
       unreadColor: '#2199fc',
       unreadCSS: 'square',
       secondaryFontClass: null,
+      opacityBackground: 1,
+      opacityFooter: 1,
+      opacityOutline: 1
     },
     "FlatTag": {
       isPrimaryTagBackgroundColorRequired: true,
@@ -268,6 +319,9 @@ export default function () {
       unreadColor: '#2199fc',
       unreadCSS: 'square',
       secondaryFontClass: null,
+      opacityBackground: 1,
+      opacityFooter: 1,
+      opacityOutline: 1
     },
     "FlatTab": {
       isPrimaryTagBackgroundColorRequired: true,
@@ -282,6 +336,9 @@ export default function () {
       unreadColor: '#2199fc',
       unreadCSS: 'square',
       secondaryFontClass: null,
+      opacityBackground: 1,
+      opacityFooter: 1,
+      opacityOutline: 1
     },
     "FlatBanner": {
       isPrimaryTagBackgroundColorRequired: true,
@@ -296,6 +353,9 @@ export default function () {
       unreadColor: '#2199fc',
       unreadCSS: 'square',
       secondaryFontClass: null,
+      opacityBackground: 1,
+      opacityFooter: 1,
+      opacityOutline: 1
     },
     "FlatBorder": {
       isPrimaryTagBackgroundColorRequired: false,
@@ -310,6 +370,9 @@ export default function () {
       unreadColor: '#2199fc',
       unreadCSS: 'square',
       secondaryFontClass: null,
+      opacityBackground: 1,
+      opacityFooter: 1,
+      opacityOutline: 1
     },
     "FlatBorderTag": {
       isPrimaryTagBackgroundColorRequired: true,
@@ -324,6 +387,9 @@ export default function () {
       unreadColor: '#2199fc',
       unreadCSS: 'square',
       secondaryFontClass: null,
+      opacityBackground: 1,
+      opacityFooter: 1,
+      opacityOutline: 1
     },
     "FlatBorderTab": {
       isPrimaryTagBackgroundColorRequired: true,
@@ -338,6 +404,9 @@ export default function () {
       unreadColor: '#2199fc',
       unreadCSS: 'square',
       secondaryFontClass: null,
+      opacityBackground: 1,
+      opacityFooter: 1,
+      opacityOutline: 1
     },
     "FlatBorderBanner": {
       isPrimaryTagBackgroundColorRequired: true,
@@ -352,6 +421,9 @@ export default function () {
       unreadColor: '#2199fc',
       unreadCSS: 'square',
       secondaryFontClass: null,
+      opacityBackground: 1,
+      opacityFooter: 1,
+      opacityOutline: 1
     }
   };
 
@@ -398,6 +470,9 @@ export default function () {
             outlineBackgroundColor: customisedDesign.outlineBackgroundColor,
             unreadColor: customisedDesign.unreadColor,
             secondaryFontClass: fontClasses[customisedDesign.secondaryFontClass],
+            opacityBackground: customisedDesign.opacityBackground,
+            opacityFooter: customisedDesign.opacityFooter,
+            opacityOutline: customisedDesign.opacityOutline,
           }
           break;
         }
@@ -439,11 +514,13 @@ export default function () {
 
       discussionListItemContent.children[3] = <div className='DiscussionListItem-stats'>{discussionListItemContent.children[3]}</div>;
 
+      let footerAlpha = discussionDesignOption.opacityFooter;
       if (parentTagFound) {
         if (childTagFound == null) {
           childTagFound = parentTagFound;
         }
         let footerColor = discussionDesignOption.isPrimaryTagBackgroundColorRequired ? parentTagFound.color(): discussionDesignOption.primaryBackgroundColor;
+        let footerColorAlpha = hexToRGB(footerColor, footerAlpha);
         if (discussionDesignOption.isPrimaryTagAnButton) {
           let footerClassName = 'DiscussionListItem-footer';
           switch(discussionDesign) {
@@ -458,7 +535,7 @@ export default function () {
           }
           discussionListItemContent.children.push(
             <span class={footerClassName}>
-              <span class="PrimaryTagLabel" style={'background:' + footerColor}>
+              <span class="PrimaryTagLabel" style={'background:' + footerColorAlpha}>
                 <span class={classList("PrimaryTagLabel-text", (discussionDesignOption.primaryFontClass ? discussionDesignOption.primaryFontClass: textContrastClass(footerColor)))}>
                   <i class={'PrimaryTagLabel-icon ' + parentTagFound.data.attributes.icon + " fa-1x"}></i>
                   <span class="PrimaryTagLabel-name">{parentTagFound.data.attributes.name}</span>
@@ -468,7 +545,7 @@ export default function () {
           );
         } else {
           discussionListItemContent.children.push(
-            <span class={classList('DiscussionListItem-footer', (discussionDesignOption.primaryFontClass ? discussionDesignOption.primaryFontClass: textContrastClass(footerColor)))} style={'background:' + footerColor }>
+            <span class={classList('DiscussionListItem-footer', (discussionDesignOption.primaryFontClass ? discussionDesignOption.primaryFontClass: textContrastClass(footerColor)))} style={'background:' + footerColorAlpha }>
               <span class='DiscussionListItem--primary'>
                 <i aria-hidden="true" class={'TagLabel-icon ' + parentTagFound.data.attributes.icon + " fa-1x"}></i>{parentTagFound.data.attributes.name}
               </span>{secondaryTags}
@@ -478,9 +555,11 @@ export default function () {
       }
       
       let backgroundColor = discussionDesignOption.outlineBackgroundColor;
+      let outlineAlpha = discussionDesignOption.opacityOutline;
       if (childTagFound) {
         backgroundColor = childTagFound.color();
       }
+      backgroundColor = hexToRGB(backgroundColor, outlineAlpha);
       switch(discussionDesign) {
         case 'StickyNoteTab':
         case 'BasicTab':
@@ -539,10 +618,11 @@ export default function () {
           break;
       }
       const foldedClassname = discussionDesignOption.unreadCSS;
+      let backgroundAlpha = discussionDesignOption.opacityBackground;
       if (childTagFound) {
-        vnode.attrs.style = {'background': (discussionDesignOption.isChildTagBackgroundColorRequired? childTagFound.color(): discussionDesignOption.childBackgroundColor), ...(vnode.attrs.style || {}) };
+        vnode.attrs.style = {'background': (discussionDesignOption.isChildTagBackgroundColorRequired? hexToRGB(childTagFound.color(), backgroundAlpha): hexToRGB(discussionDesignOption.childBackgroundColor, backgroundAlpha)), ...(vnode.attrs.style || {}) };
       } else {
-        vnode.attrs.style = {'background': discussionDesignOption.childBackgroundColor, ...(vnode.attrs.style || {}) };
+        vnode.attrs.style = {'background':  hexToRGB(discussionDesignOption.childBackgroundColor, backgroundAlpha), ...(vnode.attrs.style || {}) };
       }
       if (discussion.isUnread()) {
         discussionListItemContent.children.push(<span class={'DiscussionListItem--unreadoutline'+foldedClassname} style={'background:' +discussionDesignOption.unreadColor+ '; color:' +discussionDesignOption.unreadColor}></span>);
@@ -559,6 +639,17 @@ export default function () {
       vnode.attrs.className += ' TagWithThemes ' + discussionDesign;
     }
   });
+  function hexToRGB(hex, alpha) {
+    var r = parseInt(hex.slice(1, 3), 16),
+        g = parseInt(hex.slice(3, 5), 16),
+        b = parseInt(hex.slice(5, 7), 16);
+
+    if (alpha) {
+      return "rgba(" + r + ", " + g + ", " + b + ", " + alpha + ")";
+    } else {
+      return "rgb(" + r + ", " + g + ", " + b + ")";
+    }
+  }
 
   override(DiscussionListItem.prototype, 'mainView', function () {
     const discussion = this.attrs.discussion;
